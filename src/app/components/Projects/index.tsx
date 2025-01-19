@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Projects() {
@@ -77,35 +78,113 @@ export default function Projects() {
       js: true,
       html: true,
       css: true,
-    }
+    },
+    {
+      name: "Time in your location",
+      description: "It's a app that give you the time in your location",
+      link: "",
+      bgImage: "",
+      js: true,
+      html: true,
+      css: true,
+    },
+    {
+      name: "La Liga results and next matches",
+      description: "It's a app that give you the results of the La Liga and the next matches",
+      link: "",
+      bgImage: "",
+      js: true,
+      html: true,
+      css: true,
+    },
+    {
+      name: "Change the currency",
+      description: "It's a app that change the currency of the world",
+      link: "",
+      bgImage: "",
+      js: true,
+      html: true,
+      css: true,
+    },
+    {
+      name: "Flights with arrival in Barcelona",
+      description: "It's a app that give you the flights with arrival in Barcelona",
+      link: "",
+      bgImage: "",
+      js: true,
+      html: true,
+      css: true,
+    },
+  ])
+
+  const [javafx] = useState([
+    {
+      name: "DataBase lector (Alpha)",
+      description: "This project was doed for a project of the hight School, it's a software that helps to give information of the DataBases in your LocalHost server",
+      link: "",
+      bgImage: "",
+      java: true,
+    },
+    {
+      name: "Seven and a half",
+      description: "This project was doed for a project of the hight School, it's the card game of the seven and a half",
+      link: "",
+      bgImage: "",
+      java: true,
+    },
+
   ])
 
   return (
-    <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black" id="projects">
-      <h2 className="text-4xl font-bold">
-        Web projects
-      </h2>
-      <ul className="flex flex-wrap gap-4 items-center justify-center">
-        {projects.map((project, index) => (
-          <li className=" bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg px-4" key={index + 1}>
-            <h3 className="text-2xl font-bold">
-              {project.name}
-            </h3>
-            <p className="text-xl">
-              {project.description}
-            </p>
-            <div className=" w-full flex-row justify-between flex">
-              {project.html && <a href={project.link}>HTML</a>}
-              {project.css && <a href={project.link}>CSS</a>}
-              {project.js && <a href={project.link}>JS</a>}
-              {project.json && <a href={project.link}>JSON</a>}
-              {project.react && <a href={project.link}>React</a>}
-              {project.nextJs && <a href={project.link}>Next.js</a>}
-              {project.tailwind && <a href={project.link}>Tailwind</a>}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black" id="projects">
+        <h2 className="text-4xl font-bold">
+          Web projects
+        </h2>
+        <ul className="flex flex-wrap gap-4 items-center justify-center">
+          {projects.map((project, index) => (
+            <Link href={project.link}  key={index + 1}>
+              <li className=" bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg px-4 py-2">
+                <h3 className="text-2xl font-bold">
+                  {project.name}
+                </h3>
+                <p className="text-xl">
+                  {project.description}
+                </p>
+                <div className=" w-full flex-row justify-between flex">
+                  {project.html && <a href={project.link}>HTML</a>}
+                  {project.css && <a href={project.link}>CSS</a>}
+                  {project.js && <a href={project.link}>JS</a>}
+                  {project.json && <a href={project.link}>JSON</a>}
+                  {project.react && <a href={project.link}>React</a>}
+                  {project.nextJs && <a href={project.link}>Next.js</a>}
+                  {project.tailwind && <a href={project.link}>Tailwind</a>}
+                </div>
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </section>
+      <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black w-full">
+        <h2 className="text-4xl font-bold">
+          JavaFX projects
+        </h2>
+        <ul className="flex flex-wrap gap-4 items-center justify-center w-full">
+          {javafx.map((project, index) => (
+            <li className=" bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg px-4 py-2" key={index + 1}>
+              <h3 className="text-2xl font-bold">
+                {project.name}
+              </h3>
+              <p className="text-xl">
+                {project.description}
+              </p>
+              <div className=" w-full flex-row justify-between flex">
+                {project.java && <a href={project.link}>JAVA</a>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   )
 }
