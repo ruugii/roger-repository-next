@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Home from "./components/Home/page";
+// import Projects from "./components/Projects";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,7 @@ export default function HomePage() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Home />
         <About />
+        {/* <Projects /> */}
       </main>
     </div>
   );

@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gridRow: {
+        layout: "auto 1fr auto",
+      }
     },
   },
   plugins: [],
