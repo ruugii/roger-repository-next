@@ -14,6 +14,9 @@ export default function Header() {
           <Link href="#projects">Projects</Link>
         </li>
         <li className=" text-black hover:text-gray-800 hover:underline">
+          <Link href="#skills">Skills</Link>
+        </li>
+        <li className=" text-black hover:text-gray-800 hover:underline">
           <Link href="#studies">Studies</Link>
         </li>
         <li className=" text-black hover:text-gray-800 hover:underline">

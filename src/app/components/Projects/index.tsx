@@ -152,13 +152,13 @@ export default function Projects() {
                   {project.description}
                 </p>
                 <div className=" w-full flex-row justify-between flex">
-                  {project.html && <a href={project.link}>HTML</a>}
-                  {project.css && <a href={project.link}>CSS</a>}
-                  {project.js && <a href={project.link}>JS</a>}
-                  {project.json && <a href={project.link}>JSON</a>}
-                  {project.react && <a href={project.link}>React</a>}
-                  {project.nextJs && <a href={project.link}>Next.js</a>}
-                  {project.tailwind && <a href={project.link}>Tailwind</a>}
+                  {project.html && <p>HTML</p>}
+                  {project.css && <p>CSS</p>}
+                  {project.js && <p>JS</p>}
+                  {project.json && <p>JSON</p>}
+                  {project.react && <p>React</p>}
+                  {project.nextJs && <p>Next.js</p>}
+                  {project.tailwind && <p>Tailwind</p>}
                 </div>
               </li>
             </Link>
