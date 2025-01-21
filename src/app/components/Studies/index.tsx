@@ -6,10 +6,19 @@ export default function Studies() {
       <h2 className="text-4xl font-bold">
         Studies
       </h2>
-
       <Timeline>
         <TimelineItem>
-          <TimelineOppositeContent className=" hidden">
+          <TimelineOppositeContent className=" hidden"></TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent></TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <b className="font-bold">
+              2024 - CURRENT
+            </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
@@ -17,14 +26,19 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              ...
+              La Salle online
             </b>
+            <ul>
+              <li>
+                CFGS multiplatform application development
+              </li>
+            </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2024
+              2024 - 2021
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -33,11 +47,33 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              La salle online
+              La Salle
             </b>
             <ul>
-              <li>CFGS Web application development</li>
-              <li>CFGS multiplatform application development</li>
+              <li>
+                CFGS multiplatform application development
+              </li>
+            </ul>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <b className="font-bold">
+              2021 - 2018
+            </b>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <b className="font-bold">
+              IES Eugeni d&#39;Ors
+            </b>
+            <ul>
+              <li>
+                CFGM Microcomputer Systems and Networks
+              </li>
             </ul>
           </TimelineContent>
         </TimelineItem>
@@ -52,14 +88,6 @@ export default function Studies() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <b>
-              La salle gracia
-            </b>
-            <ul>
-              <li>CFGS Web application development</li>
-            </ul>
-            <br />
-            <br />
             <b className="font-bold">
               LUCA Tic
             </b>
@@ -82,14 +110,6 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              La salle Gracia
-            </b>
-            <ul>
-              <li>CFGS Web application development</li>
-            </ul>
-            <br />
-            <br />
-            <b className="font-bold">
               Udemy
             </b>
             <ul>
@@ -111,29 +131,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              La salle Gracia
-            </b>
-            <ul>
-              <li>CFGS Web application development</li>
-            </ul>
-            <br />
-            <br />
-            <b className="font-bold">
               CET 10
             </b>
             <ul>
               <li>
                 Diamizer course for multi-sports activities
-              </li>
-            </ul>
-            <br />
-            <br />
-            <b className="font-bold">
-              IES Eugeni d&#39;Ors
-            </b>
-            <ul>
-              <li>
-                CFGM Microcomputer Systems and Networks
               </li>
             </ul>
           </TimelineContent>
@@ -157,37 +159,6 @@ export default function Studies() {
                 Leisure and free time monitor course
               </li>
             </ul>
-            <br />
-            <br />
-            <b className="font-bold">
-              IES Eugeni d&#39;Ors
-            </b>
-            <ul>
-              <li>
-                CFGM Microcomputer Systems and Networks
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
-            <b className="font-bold">
-              2019
-            </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              IES Eugeni d&#39;Ors
-            </b>
-            <ul>
-              <li>
-                CFGM Microcomputer Systems and Networks
-              </li>
-            </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -201,16 +172,6 @@ export default function Studies() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <b className="font-bold">
-              IES Eugeni d&#39;Ors
-            </b>
-            <ul>
-              <li>
-                CFGM Microcomputer Systems and Networks
-              </li>
-            </ul>
-            <br />
-            <br />
             <b className="font-bold">
               CISCO NETACAD
             </b>
