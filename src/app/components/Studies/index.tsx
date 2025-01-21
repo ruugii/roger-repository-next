@@ -7,8 +7,8 @@ export default function Studies() {
         Studies
       </h2>
       <Timeline>
-        <TimelineItem>
-          <TimelineOppositeContent className=" hidden"></TimelineOppositeContent>
+        <TimelineItem className=" hidden">
+          <TimelineOppositeContent></TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
           </TimelineSeparator>
