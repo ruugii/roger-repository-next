@@ -9,6 +9,19 @@ export default function Studies() {
 
       <Timeline>
         <TimelineItem>
+          <TimelineOppositeContent className=" hidden">
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <b className="font-bold">
+              ...
+            </b>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
               2024
