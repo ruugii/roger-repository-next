@@ -36,8 +36,7 @@ export default function ProjectsItem(props: ProjectInteface) {
     tailwind,
     java,
     javaFX,
-    bgImage,
-    ...rest
+    bgImage
   } = props;
   return (
     <Link href={link}>
