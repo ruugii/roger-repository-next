@@ -1,6 +1,6 @@
 'use client'
 
-import Link from "next/link"
+import ProjectsItem from "@/app/ux/ProjectsItem"
 import { useState } from "react"
 
 export default function Projects() {
@@ -9,8 +9,8 @@ export default function Projects() {
     {
       name: "Ciudad de Barcelona",
       description: "This project was doed for a project of the hight School, it's a web that gives you some information of the city of Barcelona and cities of near of the city",
-      link: "",
-      bgImage: "",
+      link: "https://barcelona.lasalle.projects.ruugii.com/",
+      bgImage: "/img/BCN.PNG",
       html: true,
       css: true,
       js: true,
@@ -18,8 +18,8 @@ export default function Projects() {
     {
       name: "Mr.Crypto rarity calculator tool",
       description: "This project is maked in react, it's maked for a NFT project named Mr.Crypto, it gives you information about the rarity of your NFT",
-      link: "",
-      bgImage: "",
+      link: "https://rarity.mrcrypto.projects.ruugii.com/",
+      bgImage: "/img/MrCryptorar.PNG",
       js: true,
       json: true,
       react: true,
@@ -27,8 +27,8 @@ export default function Projects() {
     {
       name: "Bookers rarity calculator tool",
       description: "This project is maked in react, it's maked for a NFT project named Bookers, it gives you information about the rarity of your NFT",
-      link: "",
-      bgImage: "",
+      link: "https://rarity.bookers.projects.ruugii.com/",
+      bgImage: "/img/bookerRar.PNG",
       js: true,
       json: true,
       nextJs: true,
@@ -37,8 +37,8 @@ export default function Projects() {
     {
       name: "Calculator",
       description: "It's a calculator that you can use to do some basic math operations",
-      link: "",
-      bgImage: "",
+      link: "https://calc.math.projects.ruugii.com/",
+      bgImage: "/img/calc.PNG",
       js: true,
       html: true,
       css: true,
@@ -46,8 +46,8 @@ export default function Projects() {
     {
       name: "multiply app",
       description: "It's an APP, that give you some Multipltications and you have to solve them",
-      link: "",
-      bgImage: "",
+      link: "https://multiply-app.math.projects.ruugii.com/",
+      bgImage: "/img/mult.PNG",
       js: true,
       html: true,
       css: true,
@@ -55,8 +55,8 @@ export default function Projects() {
     {
       name: "Digital Clock",
       description: "It's a digital clock that you can use to know the time",
-      link: "",
-      bgImage: "",
+      link: "https://digital-clock.projects.ruugii.com/",
+      bgImage: "/img/clock.PNG",
       js: true,
       html: true,
       css: true,
@@ -64,8 +64,8 @@ export default function Projects() {
     {
       name: "Real time character count",
       description: "It's a character counter that you can use to know the number of characters you have typed",
-      link: "",
-      bgImage: "",
+      link: "https://charecter-count.projects.ruugii.com/",
+      bgImage: "/img/Counter.PNG",
       js: true,
       html: true,
       css: true,
@@ -73,8 +73,8 @@ export default function Projects() {
     {
       name: "Random color generator",
       description: "It's a random color generator app that give you some random colors",
-      link: "",
-      bgImage: "",
+      link: "https://generator-color.random.projects.ruugii.com/",
+      bgImage: "/img/rand-color.PNG",
       js: true,
       html: true,
       css: true,
@@ -84,9 +84,8 @@ export default function Projects() {
       description: "It's a app that give you the time in your location",
       link: "",
       bgImage: "",
-      js: true,
-      html: true,
-      css: true,
+      react: true,
+      git: "",
     },
     {
       name: "La Liga results and next matches",
@@ -123,14 +122,14 @@ export default function Projects() {
       description: "This project was doed for a project of the hight School, it's a software that helps to give information of the DataBases in your LocalHost server",
       link: "",
       bgImage: "",
-      java: true,
+      javaFX: true,
     },
     {
       name: "Seven and a half",
       description: "This project was doed for a project of the hight School, it's the card game of the seven and a half",
       link: "",
       bgImage: "",
-      java: true,
+      javaFX: true,
     },
 
   ])
@@ -143,25 +142,20 @@ export default function Projects() {
         </h2>
         <ul className="flex flex-wrap gap-4 items-center justify-center">
           {projects.map((project, index) => (
-            <Link href={project.link}  key={index + 1}>
-              <li className=" bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg px-4 py-2">
-                <h3 className="text-2xl font-bold">
-                  {project.name}
-                </h3>
-                <p className="text-xl">
-                  {project.description}
-                </p>
-                <div className=" w-full flex-row justify-between flex">
-                  {project.html && <p>HTML</p>}
-                  {project.css && <p>CSS</p>}
-                  {project.js && <p>JS</p>}
-                  {project.json && <p>JSON</p>}
-                  {project.react && <p>React</p>}
-                  {project.nextJs && <p>Next.js</p>}
-                  {project.tailwind && <p>Tailwind</p>}
-                </div>
-              </li>
-            </Link>
+            <ProjectsItem
+              key={index + 1}
+              link={project.link}
+              name={project.name}
+              description={project.description}
+              html={project.html}
+              css={project.css}
+              js={project.js}
+              json={project.json}
+              react={project.react}
+              nextJs={project.nextJs}
+              tailwind={project.tailwind}
+              bgImage={project.bgImage}
+            />
           ))}
         </ul>
       </section>
@@ -171,17 +165,14 @@ export default function Projects() {
         </h2>
         <ul className="flex flex-wrap gap-4 items-center justify-center w-full">
           {javafx.map((project, index) => (
-            <li className=" bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg px-4 py-2" key={index + 1}>
-              <h3 className="text-2xl font-bold">
-                {project.name}
-              </h3>
-              <p className="text-xl">
-                {project.description}
-              </p>
-              <div className=" w-full flex-row justify-between flex">
-                {project.java && <a href={project.link}>JAVA</a>}
-              </div>
-            </li>
+            <ProjectsItem
+              key={index + 1}
+              link={project.link}
+              name={project.name}
+              description={project.description}
+              javaFX={project.javaFX} 
+              bgImage={project.bgImage}
+            />
           ))}
         </ul>
       </section>
