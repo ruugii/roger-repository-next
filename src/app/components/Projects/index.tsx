@@ -82,10 +82,10 @@ export default function Projects() {
     {
       name: "Time in your location",
       description: "It's a app that give you the time in your location",
-      link: "",
-      bgImage: "",
+      link: "https://time.ruugii.com/",
+      bgImage: "/img/time.png",
       react: true,
-      git: "",
+      git: true,
     },
     {
       name: "La Liga results and next matches",
