@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "studies": "Estudios",
+    "experience": "Experiencia"
+  },
+  "home": {
+    "welcome": "Bienvenido a mi portafolio",
+    "description": "Mi nombre es Roger, soy un ingeniero fullstack curioso que le encanta aprender cosas nuevas y construir cosas geniales."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Actualmente vivo en Barcelona, España. Tengo {age} años. Estoy estudiando el ciclo formativo de grado superior en Desarrollo de Aplicaciones Multiplataforma en el instituto de La Salle.",
+    "description2": "Empecé a aprender sobre desarrollo web en 2019, en el grado medio de Sistemas microinformaticos y Redes en la asignatura de \"Aplicaciones web\" donde aprendí a usar diferentes tecnologías y gestores de contenido como HTML, CSS, JavaScript, Wordpress y Moodle.",
+    "description3": "Actualmente estoy mejorando mis habilidades en el desarrollo web aprendiendo tecnologías back-end como PHP, MySQL, Laravel o node. También estoy aprendiendo tecnologías front-end como React o Next.js. Para completarme, tengo algunos conocimientos sobre diseño de UX/UI.",
+    "description4": "Si desea más información sobre mí, puede acceder a mi <guidelines>Linkedin</guidelines> o mi <portfolio>personal web portfolo</portfolio>.",
+    "description5": "Si desea contactarme, puede enviarme un correo electrónico a <email>roger.barrero.sorribas@gmail.com</email>."
+  }
+}
