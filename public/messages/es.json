@@ -123,5 +123,59 @@
       "monitor": "Curso de monitor de ocio y tiempo libre",
       "CCNA": "Titulo en redes"
     }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "year": {
+      "current": "Actualidad",
+      "2025": "2025",
+      "2024": "2024",
+      "2023": "2023",
+      "2022": "2022",
+      "2021": "2021",
+      "2020": "2020",
+      "2019": "2019",
+      "2018": "2018",
+      "2017": "2017",
+      "2016": "2016",
+      "2015": "2015",
+      "2014": "2014",
+      "2013": "2013",
+      "2012": "2012",
+      "2011": "2011",
+      "2010": "2010"
+    },
+    "enterprice": {
+      "ntt": {
+        "title": "NTT Data Europe & Latam",
+        "position": "Junior Frontend Developer Engineer",
+        "description": "<ul><li>Naturgy (UFD) Proyecto del portal privado web</li></ul>"
+      },
+      "nsign": {
+        "title": "NSIGN.TV",
+        "position": "Trainee Frontend Engineer",
+        "description": "<ul><li>Diseño y desarrollo de distintas funciones para los clientes<ul><li>Vuelos con llegada a Barcelona</li><li>Cambio Euro - Dolar en tiempo real</li><li>Visualizar los proximos partidos de La Liga</li><li>Tiempo en tu localizacion (o la que marque el navegador)</li><li>Visualizacion de los proximos eventos en tu calendario</li></ul></li><li>Analisis del UX de la plataforma y realizar distintas propuestas de mejora</li></ul>"
+      },
+      "aecc": {
+        "title": "Asociación española contra el cáncer",
+        "position": "Monitor de colonias de verano",
+        "description": "<ul>Realizar diferentes tareas para dinamizar al grupo de niños del grupo de mediamos (10 - 13 años) en los Campamentos de Verano que realiza anualmente la Asociación Española Contra el Cáncer en Salardú (Vall d'aran)</ul>"
+      },
+      "ckm": {
+        "title": "Asociación Comkedem",
+        "position": "Voluntario",
+        "description": "<ul><li>Diseño de las diferentes secciones del sitio web para una futura actualización en wordpress</li></ul>"
+      },
+      "ckm2": {
+        "title": "Asociación Comkedem",
+        "position": "Monitor de casal y campamento de verano",
+        "description": "<ul><li>Realizar diferentes tareas de dinamización grupal en el casal deportivo (entre 8 y 15 años) y en las Estadas Autonomas (entre 16 y 18) que realiza cada verano la Asociación Comkedem</li></ul>"
+      },
+      "ies": {
+        "title": "IES Alt Penedes",
+        "position": "Tecnico Informatico",
+        "description": "<ul><li>Instalación, actualización y configuración de sistemas operativos y software accesorios para portátiles recién adquiridos.</li><li>Instalación de equipos audiovisuales en las aulas.</li><li>Elaboración de audiovisuales para las jornadas de puertas abiertas del curso académico 2020-2021</li><li>Colaboración en la instalación y configuración de la plataforma Moodle para poder realizar las clases telemáticas durante la pandemia</li></ul>"
+      }
+    }
   }
 }

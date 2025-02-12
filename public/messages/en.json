@@ -123,5 +123,59 @@
       "monitor": "Leisure and free time monitor course",
       "CCNA": "Title in networks"
     }
+  },
+  "experience": {
+    "title": "Experience",
+    "year": {
+      "current": "Current",
+      "2025": "2025",
+      "2024": "2024",
+      "2023": "2023",
+      "2022": "2022",
+      "2021": "2021",
+      "2020": "2020",
+      "2019": "2019",
+      "2018": "2018",
+      "2017": "2017",
+      "2016": "2016",
+      "2015": "2015",
+      "2014": "2014",
+      "2013": "2013",
+      "2012": "2012",
+      "2011": "2011",
+      "2010": "2010"
+    },
+    "enterprice": {
+      "ntt": {
+        "title": "NTT Data Europe & Latam",
+        "position": "Junior Frontend Developer Engineer",
+        "description": "<ul><li>Naturgy (UFD) Portal web project</li></ul>"
+      },
+      "nsign": {
+        "title": "NSIGN.TV",
+        "position": "Trainee Frontend Engineer",
+        "description": "<ul><li>Design and develop of diferent applet utilities for the clients<ul><li>View the flights to arrive at Barcelona</li><li>Change Euro - Dolar in live</li><li>View the next matches in La Liga</li><li>Time in the location of the device (or that marks the browser you are using)</li><li>View upcoming events on a calendar</li></ul></li><li>Analysis of the UX of the platform and making proposals for improvement</li></ul>"
+      },
+      "aecc": {
+        "title": "Asociación española contra el cáncer",
+        "position": "Summer Camp monitor",
+        "description": "<ul>Carry out different tasks to stimulate the group of medium-sized children (10 - 13 years old) in the Summer Camps carried out annually by the Spanish Association Against Cancer in Salardú (Vall d'aran)</ul>"
+      },
+      "ckm": {
+        "title": "Comkedem Sports and Education Association",
+        "position": "Volunteer",
+        "description": "<ul><li>Design of the different sections of the website for a future update in wordpress</li></ul>"
+      },
+      "ckm2": {
+        "title": "Comkedem Sports and Education Association",
+        "position": "Casal and summer Campament monitor",
+        "description": "<ul><li>Carry out diferent group dynamization tasks in the Sports Center (between 8 and 15 years old) and in the Autonomus States (Between 16 and 18) carried out every summer by the Comkedem Association</li></ul>"
+      },
+      "ies": {
+        "title": "IES Alt Penedes",
+        "position": "IT Technician",
+        "description": "<ul><li>Installation, update and configuration of operating systems and accesory software for newly acquired laptops</li><li>Installation of audiovisual equipment in the classrooms</li><li>Preparation of audiovisuals for the days of open doors of the academic year 2020-2021</li><li>Collaboration in the installation and configuration of the Moodle platform to be able to carry out the telematic classes during the COVID 19 lockdown</li></ul>"
+      }
+    }
   }
 }

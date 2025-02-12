@@ -1,10 +1,14 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, timelineOppositeContentClasses, TimelineSeparator } from "@mui/lab";
+import { useTranslations } from "next-intl";
 
 export default function Experience() {
+
+  const t = useTranslations('experience');
+
   return (
     <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black w-full" id="experience">
       <h2 className="text-4xl font-bold">
-        Experience
+        {t('title')}
       </h2>
       <Timeline
         sx={{
@@ -16,7 +20,7 @@ export default function Experience() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2025 - 2023
+              {t('year.2025')} - {t('year.2023')}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -25,68 +29,31 @@ export default function Experience() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              NTT Data Europe & Latam
+              {t('enterprice.ntt.title')}
             </b>
             <ul>
               <li>
-                Junior Frontend Developer Engineer
+                {t('enterprice.ntt.position')}
               </li>
-              <ul>
-                <li>Naturgy (UFD) Portal web project</li>
-              </ul>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
-            <b className="font-bold">
-              2023
-            </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              NSIGN.TV
-            </b>
-            <ul>
-              <li>
-                Trainee Frontend Engineer
-              </li>
-              <ul>
-                <li>
-                  Design and develop of diferent applet utilities for the clients
+              {t.rich('enterprice.ntt.description', {
+                ul: (chunks) => (
                   <ul>
-                    <li>
-                      View the flights to arrive at Barcelona
-                    </li>
-                    <li>
-                      Change Euro - Dolar in live
-                    </li>
-                    <li>
-                      View the next matches in La Liga
-                    </li>
-                    <li>
-                      Time in the location of the device (or that marks the browser you are using)
-                    </li>
-                    <li>
-                      View upcoming events on a calendar
-                    </li>
+                    {chunks}
                   </ul>
-                </li>
-                <li>
-                  Analysis of the UX of the platform and making proposals for improvement
-                </li>
-              </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
             </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2022
+              {t('year.2023')}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -95,22 +62,31 @@ export default function Experience() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              Asociación española contra el cáncer
+              {t('enterprice.nsign.title')}
             </b>
             <ul>
               <li>
-                Summer Camp monitor
+                {t('enterprice.nsign.position')}
               </li>
-              <ul>
-                Carry out different tasks to stimulate the group of medium-sized children (10 - 13 years old) in the Summer Camps carried out annually by the Spanish Association Against Cancer in Salardú (Vall d&apos;aran)
-              </ul>
+              {t.rich('enterprice.nsign.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
             </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2022
+              {t('year.2022')}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -119,22 +95,31 @@ export default function Experience() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              Comkedem Sports and Education Association
+              {t('enterprice.aecc.title')}
             </b>
             <ul>
               <li>
-                Volunteer
+                {t('enterprice.aecc.position')}
               </li>
-              <ul>
-                <li>Design of the different sections of the website for a future update in wordpress</li>
-              </ul>
+              {t.rich('enterprice.aecc.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
             </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2020
+              {t('year.2022')}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -143,24 +128,31 @@ export default function Experience() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              Comkedem Sports and education Association
+              {t('enterprice.ckm.title')}
             </b>
             <ul>
               <li>
-                Casal and summer Campament monitor
+                {t('enterprice.ckm.position')}
               </li>
-              <ul>
-                <li>
-                  Carry out diferent group dynamization tasks in the Sports Center (between 8 and 15 years old) and in the Autonomus States (Between 16 and 18) carried out every summer by the Comkedem Association
-                </li>
-              </ul>
+              {t.rich('enterprice.ckm.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
             </ul>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2020
+              {t('year.2020')}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -169,18 +161,57 @@ export default function Experience() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              IES Alt Penedes
+              {t('enterprice.ckm2.title')}
             </b>
             <ul>
               <li>
-                IT Technician
+                {t('enterprice.ckm2.position')}
               </li>
-              <ul>
-                <li>Installation, update and configuration of operating systems and accesory software for newly acquired laptops</li>
-                <li>Installation of audiovisual equipment in the classrooms</li>
-                <li>Preparation of audiovisuals for the days of open doors of the academic year 2020-2021</li>
-                <li>Collaboration in the installation and configuration of the Moodle platform to be able to carry out the telematic classes</li>
-              </ul>
+              {t.rich('enterprice.ckm2.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
+            </ul>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <b className="font-bold">
+              {t('year.2020')}
+            </b>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <b className="font-bold">
+              {t('enterprice.ies.title')}
+            </b>
+            <ul>
+              <li>
+                {t('enterprice.ies.position')}
+              </li>
+              {t.rich('enterprice.ies.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
             </ul>
           </TimelineContent>
         </TimelineItem>
