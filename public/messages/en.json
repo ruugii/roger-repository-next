@@ -18,5 +18,67 @@
     "description3": "Right now, I'm improving my skills in web development learning back-end technologies like PHP, MySQL, Laravel or node. Also I'm learning front-end technologies like React or Node.js. To complete all this subjects, I have some knowledges about UX/UI design.",
     "description4": "If you want more information about me, you can acces to my <guidelines>Linkedin</guidelines> or my <portfolio>personal web portfolo</portfolio>.",
     "description5": "If you want to contact me, you can send me an email to <email>rogerbarrero@gmail.com</email>."
+  },
+  "projects": {
+    "title": {
+      "web": "Web projects",
+      "javafx": "JavaFX projects"
+    },
+    "projects1": {
+      "name": "Barcelona city",
+      "description": "This project, made for a subject of the high school of DAW in La Salle, is an informative landing page of the city of Barcelona and surroundings. It was made with HTML, CSS and JavaScript."
+    },
+    "projects2": {
+      "name": "Mr.Crypto rarity calculator",
+      "description": "Mr.Crypto is a private community that can only be accessed through a digital collectible. This project made in ract.js, is a calculator of the rarities of the collectibles."
+    },
+    "projects3": {
+      "name": "Bookers rarity calculator",
+      "description": "Bookers is a private community of readers that can only be accessed through a digital collectible. This project made in next.js and tailwind, is a calculator of the rarities of the collectibles."
+    },
+    "projects4": {
+      "name": "Calculator",
+      "description": "It is a calculator prepared to perform basic mathematical operations."
+    },
+    "projects5": {
+      "name": "Multiplication app",
+      "description": "It is an application that gives you multiplications and you have to solve them."
+    },
+    "projects6": {
+      "name": "Digital clock",
+      "description": "It is a digital clock that shows the current time."
+    },
+    "projects7": {
+      "name": "Character counter",
+      "description": "It is an application that counts the characters of a text in real time."
+    },
+    "projects8": {
+      "name": "Random color generator",
+      "description": "It is an application that generates random colors and shows you their hexadecimal code."
+    },
+    "projects9": {
+      "name": "Time in your city",
+      "description": "It is an application that shows you the time in your city."
+    },
+    "projects10": {
+      "name": "League results",
+      "description": "It is an application that shows you the results of the league."
+    },
+    "projects11": {
+      "name": "Currency exchange",
+      "description": "It is an app that shows you the currency exchange in real time."
+    },
+    "projects12": {
+      "name": "Weather in your city",
+      "description": "It is an app that shows you the weather in your city."
+    },
+    "javafx1": {
+      "name": "Database reader",
+      "description": "This project is a JavaFX application that reads a database and shows the data in a table."
+    },
+    "javafx2": {
+      "name": "Database editor",
+      "description": "This project is a JavaFX application that reads a database and allows you to edit the data."
+    }
   }
 }

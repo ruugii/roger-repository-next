@@ -1,14 +1,14 @@
-'use client'
-
 import ProjectsItem from "@/app/ux/ProjectsItem"
-import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function Projects() {
 
-  const [projects] = useState([
+  const t = useTranslations('projects')
+
+  const projects = [
     {
-      name: "Ciudad de Barcelona",
-      description: "This project was doed for a project of the hight School, it's a web that gives you some information of the city of Barcelona and cities of near of the city",
+      name: 'projects1.name',
+      description: 'projects1.description',
       link: "https://barcelona.lasalle.projects.ruugii.com/",
       bgImage: "/img/BCN.PNG",
       html: true,
@@ -16,8 +16,8 @@ export default function Projects() {
       js: true,
     },
     {
-      name: "Mr.Crypto rarity calculator tool",
-      description: "This project is maked in react, it's maked for a NFT project named Mr.Crypto, it gives you information about the rarity of your NFT",
+      name: 'projects2.name',
+      description: 'projects2.description',
       link: "https://rarity.mrcrypto.projects.ruugii.com/",
       bgImage: "/img/MrCryptorar.PNG",
       js: true,
@@ -25,8 +25,8 @@ export default function Projects() {
       react: true,
     },
     {
-      name: "Bookers rarity calculator tool",
-      description: "This project is maked in react, it's maked for a NFT project named Bookers, it gives you information about the rarity of your NFT",
+      name: 'projects3.name',
+      description: 'projects3.description',
       link: "https://rarity.bookers.projects.ruugii.com/",
       bgImage: "/img/bookerRar.PNG",
       js: true,
@@ -35,8 +35,8 @@ export default function Projects() {
       tailwind: true,
     },
     {
-      name: "Calculator",
-      description: "It's a calculator that you can use to do some basic math operations",
+      name: 'projects4.name',
+      description: 'projects4.description',
       link: "https://calc.math.projects.ruugii.com/",
       bgImage: "/img/calc.PNG",
       js: true,
@@ -44,8 +44,8 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "multiply app",
-      description: "It's an APP, that give you some Multipltications and you have to solve them",
+      name: 'projects5.name',
+      description: 'projects5.description',
       link: "https://multiply-app.math.projects.ruugii.com/",
       bgImage: "/img/mult.PNG",
       js: true,
@@ -53,8 +53,8 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Digital Clock",
-      description: "It's a digital clock that you can use to know the time",
+      name: 'projects6.name',
+      description: 'projects6.description',
       link: "https://digital-clock.projects.ruugii.com/",
       bgImage: "/img/clock.PNG",
       js: true,
@@ -62,8 +62,8 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Real time character count",
-      description: "It's a character counter that you can use to know the number of characters you have typed",
+      name: 'projects7.name',
+      description: 'projects7.description',
       link: "https://charecter-count.projects.ruugii.com/",
       bgImage: "/img/Counter.PNG",
       js: true,
@@ -71,8 +71,8 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Random color generator",
-      description: "It's a random color generator app that give you some random colors",
+      name: 'projects8.name',
+      description: 'projects8.description',
       link: "https://generator-color.random.projects.ruugii.com/",
       bgImage: "/img/rand-color.PNG",
       js: true,
@@ -80,16 +80,16 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Time in your location",
-      description: "It's a app that give you the time in your location",
+      name: 'projects9.name',
+      description: 'projects9.description',
       link: "https://time.ruugii.com/",
       bgImage: "/img/time.png",
       react: true,
-      git: true,
+      git: true
     },
     {
-      name: "La Liga results and next matches",
-      description: "It's a app that give you the results of the La Liga and the next matches",
+      name: 'projects10.name',
+      description: 'projects10.description',
       link: "",
       bgImage: "",
       js: true,
@@ -97,8 +97,8 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Change the currency",
-      description: "It's a app that change the currency of the world",
+      name: 'projects11.name',
+      description: 'projects11.description',
       link: "",
       bgImage: "",
       js: true,
@@ -106,47 +106,46 @@ export default function Projects() {
       css: true,
     },
     {
-      name: "Flights with arrival in Barcelona",
-      description: "It's a app that give you the flights with arrival in Barcelona",
+      name: 'projects12.name',
+      description: 'projects12.description',
       link: "",
       bgImage: "",
       js: true,
       html: true,
       css: true,
     },
-  ])
+  ]
 
-  const [javafx] = useState([
+  const javafx = [
     {
-      name: "DataBase lector (Alpha)",
-      description: "This project was doed for a project of the hight School, it's a software that helps to give information of the DataBases in your LocalHost server",
+      name: 'javafx1.name',
+      description: 'javafx1.description',
       link: "",
       bgImage: "",
-      javaFX: true,
+      javaFX: true
     },
     {
-      name: "Seven and a half",
-      description: "This project was doed for a project of the hight School, it's the card game of the seven and a half",
+      name: 'javafx2.name',
+      description: 'javafx2.description',
       link: "",
       bgImage: "",
-      javaFX: true,
-    },
-
-  ])
+      javaFX: true
+    }
+  ]
 
   return (
     <>
       <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black" id="projects">
         <h2 className="text-4xl font-bold">
-          Web projects
+          {t("title.web")}
         </h2>
         <ul className="flex flex-wrap gap-4 items-center justify-center">
           {projects.map((project, index) => (
             <ProjectsItem
               key={index + 1}
               link={project.link}
-              name={project.name}
-              description={project.description}
+              name={t(project.name)}
+              description={t(project.description)}
               html={project.html}
               css={project.css}
               js={project.js}
@@ -161,16 +160,16 @@ export default function Projects() {
       </section>
       <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black w-full">
         <h2 className="text-4xl font-bold">
-          JavaFX projects
+          {t('title.javafx')}
         </h2>
         <ul className="flex flex-wrap gap-4 items-center justify-center w-full">
           {javafx.map((project, index) => (
             <ProjectsItem
               key={index + 1}
               link={project.link}
-              name={project.name}
-              description={project.description}
-              javaFX={project.javaFX} 
+              name={t(project.name)}
+              description={t(project.description)}
+              javaFX={project.javaFX}
               bgImage={project.bgImage}
             />
           ))}

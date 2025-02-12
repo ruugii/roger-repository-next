@@ -18,5 +18,67 @@
     "description3": "Actualmente estoy mejorando mis habilidades en el desarrollo web aprendiendo tecnologías back-end como PHP, MySQL, Laravel o node. También estoy aprendiendo tecnologías front-end como React o Next.js. Para completarme, tengo algunos conocimientos sobre diseño de UX/UI.",
     "description4": "Si desea más información sobre mí, puede acceder a mi <guidelines>Linkedin</guidelines> o mi <portfolio>personal web portfolo</portfolio>.",
     "description5": "Si desea contactarme, puede enviarme un correo electrónico a <email>roger.barrero.sorribas@gmail.com</email>."
+  },
+  "projects": {
+    "title": {
+      "web": "Proyectos web",
+      "javafx": "Proyectos JavaFX"
+    },
+    "projects1": {
+      "name": "Ciudad de Barcelona",
+      "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es una landing page informativa de la ciudad de Barcelona y cercanias. Fue realizado con HTML, CSS y JavaScript."
+    },
+    "projects2": {
+      "name": "Calculadora de rarezas de Mr.Crypto",
+      "description": "Mr.Crypto es una comunidad privada a la que solo se puede acceder a traves de un coleccionable digital. Este proyecto realizado en ract.js, es una calculadora de rarezas de los coleccionables."
+    },
+    "projects3": {
+      "name": "Calculadora de rarezas de Bookers",
+      "description": "Bookers es una comunidad privada de lectores a la que solo se puede acceder a traves de un coleccionable digital. Este proyecto realizado en next.js y tailwind, es una calculadora de rarezas de los coleccionables."
+    },
+    "projects4": {
+      "name": "Calculadora",
+      "description": "Es una calculadora preparada para realizar operaciones matemáticas básicas."
+    },
+    "projects5": {
+      "name": "App de multiplicacion",
+      "description": "Es una aplicación que te da multiplicaciones y las tienes que resolver."
+    },
+    "projects6": {
+      "name": "Reloj digital",
+      "description": "Es un reloj digital que muestra la hora actual."
+    },
+    "projects7": {
+      "name": "Contador de caracteres",
+      "description": "Es una aplicación que cuenta los caracteres de un texto a tiempo real."
+    },
+    "projects8": {
+      "name": "Generador de colores aleatorios",
+      "description": "Es una aplicación que genera colores aleatorios y te muestra su código hexadecimal."
+    },
+    "projects9": {
+      "name": "Tiempo en tu ciudad",
+      "description": "Es una aplicación que te muestra el tiempo en tu ciudad."
+    },
+    "projects10": {
+      "name": "resultados de la liga",
+      "description": "Es una aplicación que te muestra los resultados de la liga y los proximos partidos."
+    },
+    "projects11": {
+      "name": "Cambio de moneda",
+      "description": "Es una app que te muestra el cambio de moneda en tiempo real."
+    },
+    "projects12": {
+      "name": "Vuelos con llegada a Barcelona",
+      "description": "Es una APP que te muestra los vuelos que llegan a Barcelona."
+    },
+    "javafx1": {
+      "name": "Lector de Base de Datos",
+      "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es una aplicacion en java que te lee las bases de datos de tu servidor local y te muestra los datos."
+    },
+    "javafx2": {
+      "name": "Juego del 7 y medio",
+      "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es el clasico juego de cartas del 7 y medio."
+    }
   }
 }
