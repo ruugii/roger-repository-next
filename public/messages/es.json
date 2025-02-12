@@ -80,5 +80,8 @@
       "name": "Juego del 7 y medio",
       "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es el clasico juego de cartas del 7 y medio."
     }
+  },
+  "skills": {
+    "title": "Habilidades"
   }
 }

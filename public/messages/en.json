@@ -80,5 +80,8 @@
       "name": "Database editor",
       "description": "This project is a JavaFX application that reads a database and allows you to edit the data."
     }
+  },
+  "skills": {
+    "title": "Skills"
   }
 }

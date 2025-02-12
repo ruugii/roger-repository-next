@@ -1,10 +1,10 @@
-'use client'
-
-import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function Skills() {
 
-  const [skills] = useState([
+  const t = useTranslations('skills')
+
+  const skills = [
     {
       name: "HTML",
     },
@@ -47,12 +47,12 @@ export default function Skills() {
     {
       name: "Shopify",
     }
-  ])
+  ]
 
   return (
     <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black" id="skills">
       <h2 className="text-4xl font-bold">
-        Web projects
+        {t('title')}
       </h2>
       <ul className="flex flex-wrap gap-4 items-center justify-center">
         {skills.map((project, index) => (
