@@ -1,10 +1,14 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
+import { useTranslations } from "next-intl";
 
 export default function Studies() {
+
+  const t = useTranslations("studies");
+
   return (
     <section className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-lg p-8 text-black w-full" id="studies">
       <h2 className="text-4xl font-bold">
-        Studies
+        {t("title")}
       </h2>
       <Timeline>
         <TimelineItem className=" hidden">
@@ -17,7 +21,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2024 - CURRENT
+              {`${t("year.2024")} - ${t("year.current")}`}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -26,11 +30,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              La Salle online
+              {t("school.lasalleonline")}
             </b>
             <ul>
               <li>
-                CFGS multiplatform application development
+                {t("degree.DAM")}
               </li>
             </ul>
           </TimelineContent>
@@ -38,7 +42,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2024 - 2021
+              {`${t("year.2024")} - ${t("year.2021")}`}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -47,11 +51,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              La Salle
+              {t("school.lasallegracia")}
             </b>
             <ul>
               <li>
-                CFGS multiplatform application development
+                {t("degree.DAW")}
               </li>
             </ul>
           </TimelineContent>
@@ -59,7 +63,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2021 - 2018
+              {`${t("year.2021")} - ${t("year.2018")}`}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -68,11 +72,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              IES Eugeni d&#39;Ors
+              {t("school.eugeni")}
             </b>
             <ul>
               <li>
-                CFGM Microcomputer Systems and Networks
+                {t("degree.SMX")}
               </li>
             </ul>
           </TimelineContent>
@@ -80,7 +84,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2023
+              {t("year.2023")}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -89,11 +93,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              LUCA Tic
+              {t("school.lucatic")}
             </b>
             <ul>
               <li>
-                Program InTalent, Java Cloud Microservices
+                {t("degree.InTalent")}
               </li>
             </ul>
           </TimelineContent>
@@ -101,7 +105,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2022
+              {t("year.2022")}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -110,11 +114,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              Udemy
+              {t("school.udemy")}
             </b>
             <ul>
               <li>
-                Smart Contracts with solidity from A to Z
+                {t("degree.Solidity")}
               </li>
             </ul>
           </TimelineContent>
@@ -122,7 +126,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2021
+              {t("year.2021")}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -131,11 +135,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              CET 10
+              {t("school.CET")}
             </b>
             <ul>
               <li>
-                Diamizer course for multi-sports activities
+                {t("degree.Diamizer")}
               </li>
             </ul>
           </TimelineContent>
@@ -143,7 +147,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2020
+              {t("year.2020")}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -152,11 +156,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              CET 10
+              {t("school.CET")}
             </b>
             <ul>
               <li>
-                Leisure and free time monitor course
+                {t("degree.monitor")}
               </li>
             </ul>
           </TimelineContent>
@@ -164,7 +168,7 @@ export default function Studies() {
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
-              2018
+              {t("year.2018")}
             </b>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -173,11 +177,11 @@ export default function Studies() {
           </TimelineSeparator>
           <TimelineContent>
             <b className="font-bold">
-              CISCO NETACAD
+              {t("school.CISCO")}
             </b>
             <ul>
               <li>
-                Title in networks
+                {t("degree.CCNA")}
               </li>
             </ul>
           </TimelineContent>

@@ -83,5 +83,45 @@
   },
   "skills": {
     "title": "Skills"
+  },
+  "studies": {
+    "title": "Studies",
+    "year": {
+      "current": "Current",
+      "2024": "2024",
+      "2023": "2023",
+      "2022": "2022",
+      "2021": "2021",
+      "2020": "2020",
+      "2019": "2019",
+      "2018": "2018",
+      "2017": "2017",
+      "2016": "2016",
+      "2015": "2015",
+      "2014": "2014",
+      "2013": "2013",
+      "2012": "2012",
+      "2011": "2011",
+      "2010": "2010"
+    },
+    "school": {
+      "lasalleonline": "La Salle Online",
+      "lasallegracia": "La Salle Gracia",
+      "eugeni": "IES Eugeni d'Ors",
+      "lucatic": "Luca TIC",
+      "udemy": "Udemy",
+      "CET": "CET 10",
+      "CISCO": "CISCO"
+    },
+    "degree": {
+      "DAM": "CFGS multiplatform application development",
+      "DAW": "CFGS web application development",
+      "SMX": "CFGM Microcomputer Systems and Networks",
+      "InTalent": "Program InTalent, Java Cloud Microservices",
+      "Solidity": "Smart Contracts with solidity from A to Z",
+      "Diamizer": "Diamizer course for multi-sports activities",
+      "monitor": "Leisure and free time monitor course",
+      "CCNA": "Title in networks"
+    }
   }
 }
