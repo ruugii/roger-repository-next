@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./[locale]/components/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -39,7 +38,6 @@ export default async function RootLayout({
           messages={messages}
           locale={locale}
         >
-          <Header />
           {children}
           {/* <Footer /> */}
         </NextIntlClientProvider>
