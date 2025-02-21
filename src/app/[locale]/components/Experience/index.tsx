@@ -215,6 +215,39 @@ export default function Experience() {
             </ul>
           </TimelineContent>
         </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <b className="font-bold">
+              {t('year.2019')}
+            </b>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <b className="font-bold">
+              {t('enterprice.tv.title')}
+            </b>
+            <ul>
+              <li>
+                {t('enterprice.tv.position')}
+              </li>
+              {t.rich('enterprice.tv.description', {
+                ul: (chunks) => (
+                  <ul>
+                    {chunks}
+                  </ul>
+                ),
+                li: (chunks) => (
+                  <li>
+                    {chunks}
+                  </li>
+                )
+              })}
+            </ul>
+          </TimelineContent>
+        </TimelineItem>
       </Timeline>
     </section>
   )

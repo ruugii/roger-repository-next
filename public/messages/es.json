@@ -175,6 +175,11 @@
         "title": "IES Alt Penedes",
         "position": "Tecnico Informatico",
         "description": "<ul><li>Instalación, actualización y configuración de sistemas operativos y software accesorios para portátiles recién adquiridos.</li><li>Instalación de equipos audiovisuales en las aulas.</li><li>Elaboración de audiovisuales para las jornadas de puertas abiertas del curso académico 2020-2021</li><li>Colaboración en la instalación y configuración de la plataforma Moodle para poder realizar las clases telemáticas durante la pandemia</li></ul>"
+      },
+      "tv": {
+        "title": "Los espabilados",
+        "position": "Extra de series y peliculas",
+        "description": "<ul><li>Extra en la serie 'Los espabilados' de Movistar Plus+</li></ul>"
       }
     }
   }
