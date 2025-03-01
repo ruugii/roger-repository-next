@@ -1,4 +1,4 @@
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, timelineOppositeContentClasses, TimelineSeparator } from "@mui/lab";
+import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { useTranslations } from "next-intl";
 
 export default function Experience() {
@@ -10,13 +10,7 @@ export default function Experience() {
       <h2 className="text-4xl font-bold">
         {t('title')}
       </h2>
-      <Timeline
-        sx={{
-          [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.2,
-          },
-        }}
-      >
+      <Timeline>
         <TimelineItem>
           <TimelineOppositeContent>
             <b className="font-bold">
