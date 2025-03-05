@@ -1,9 +1,7 @@
 "use client";
 
 import {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
+  GoogleGenerativeAI
 } from "@google/generative-ai";
 
 import { useState } from "react";
