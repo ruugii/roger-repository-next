@@ -4,7 +4,7 @@ import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Message = {
   role: "user" | "model";
@@ -16,6 +16,10 @@ export default function Chat() {
   const [openChat, setOpenChat] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    console.log(apiKey);
+  }, [apiKey]);
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -72,7 +76,7 @@ export default function Chat() {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-lg ${message.role === "model" ? "bg-gray-200" : "bg-blue-400 text-white"}`}
+                className={`p-2 rounded-lg ${message.role === "model" ? "bg-gray-200" : "bg-yellow-500 text-white"}`}
               >
                 {message.parts.map((part, i) => (
                   <p key={i} className="whitespace-pre-wrap">{part.text}</p>
@@ -87,7 +91,7 @@ export default function Chat() {
               onChange={(e) => setMessage(e.target.value)}
               className="flex-1 p-2 rounded-lg"
             />
-            <button onClick={sendButtonClicked} className="bg-blue-400 p-2 rounded-lg text-white">
+            <button onClick={sendButtonClicked} className="bg-yellow-500 p-2 rounded-lg text-white">
               Enviar
             </button>
           </div>
