@@ -12,7 +12,7 @@ type Message = {
 };
 
 export default function Chat() {
-  const [apiKey] = useState<string>(process.env.GEMINI_API_KEY || "");
+  const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "");
   const [openChat, setOpenChat] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
