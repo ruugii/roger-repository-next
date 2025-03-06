@@ -125,6 +125,7 @@ export default function Chat() {
           onClick={() => setOpenChat(true)}
         >
           <Image src="/icon/chat.svg" width={30} height={30} alt="icono de chat, habla con Ruugii GPT" />
+          <p className="ml-2">Habla con ruugiiGPT</p>
         </button>
       )}
     </div>
