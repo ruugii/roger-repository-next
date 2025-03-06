@@ -16,6 +16,7 @@ export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Referencia para el scroll
+  const [loadingMessage, setLoadingMessage] = useState(false);
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -33,6 +34,7 @@ export default function Chat() {
   };
 
   async function run(newMessage: string) {
+    setLoadingMessage(true);
     // Agregar mensaje del usuario primero
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -47,13 +49,17 @@ export default function Chat() {
     });
 
     const response = await chatSession.sendMessage(newMessage);
-    const botResponse = response.response.text();
+    if (response) {
+      setLoadingMessage(false);
+      const botResponse = response.response.text();
 
-    // Agregar respuesta del modelo al estado
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { role: "model", parts: [{ text: botResponse }] },
-    ]);
+      // Agregar respuesta del modelo al estado
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: "model", parts: [{ text: botResponse }] },
+      ]);
+    }
+
   }
 
   useEffect(() => {
@@ -87,6 +93,17 @@ export default function Chat() {
                 ))}
               </div>
             ))}
+            {loadingMessage && (
+              <div
+                className={`p-2 rounded-lg ${"bg-gray-200"}`}
+              >
+                <div className="flex flex-row gap-2">
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce"></div>
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce [animation-delay:-.3s]"></div>
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce [animation-delay:-.5s]"></div>
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} /> {/* Elemento oculto para el scroll */}
           </div>
           <div className="flex gap-2 mt-2">
