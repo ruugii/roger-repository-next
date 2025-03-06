@@ -3,6 +3,7 @@
 import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
@@ -12,6 +13,9 @@ type Message = {
 };
 
 export default function Chat() {
+
+    const t = useTranslations('ia')
+
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
   const [openChat, setOpenChat] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -125,7 +129,7 @@ export default function Chat() {
           onClick={() => setOpenChat(true)}
         >
           <Image src="/icon/chat.svg" width={30} height={30} alt="icono de chat, habla con Ruugii GPT" />
-          <p className="ml-2">Habla con ruugiiGPT</p>
+          <p className="ml-2">{t('button')}</p>
         </button>
       )}
     </div>

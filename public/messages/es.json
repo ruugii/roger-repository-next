@@ -182,5 +182,8 @@
         "description": "<ul><li>Extra en la serie 'Los espabilados' de Movistar Plus+</li></ul>"
       }
     }
+  },
+  "ia": {
+    "button": "Habla con ruugiiGPT"
   }
 }
