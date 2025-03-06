@@ -10,12 +10,14 @@ interface ProjectInteface {
   html?: boolean;
   css?: boolean;
   js?: boolean;
+  ts?: boolean;
   json?: boolean;
   react?: boolean;
   nextJs?: boolean;
   tailwind?: boolean;
   java?: boolean;
   javaFX?: boolean;
+  git?: boolean;
   bgImage?: string;
 }
 
@@ -30,12 +32,14 @@ export default function ProjectsItem(props: ProjectInteface) {
     html,
     css,
     js,
+    ts,
     json,
     react,
     nextJs,
     tailwind,
     java,
     javaFX,
+    git,
     bgImage
   } = props;
   return (
@@ -60,12 +64,14 @@ export default function ProjectsItem(props: ProjectInteface) {
                 {html && <p>HTML</p>}
                 {css && <p>CSS</p>}
                 {js && <p>JS</p>}
+                {ts && <p>TS</p>}
                 {json && <p>JSON</p>}
                 {react && <p>React</p>}
                 {nextJs && <p>Next.js</p>}
                 {tailwind && <p>Tailwind</p>}
                 {java && <p>Java</p>}
                 {javaFX && <p>JavaFX</p>}
+                {git && <p>Git</p>}
               </div>
             </div>
           ) : (

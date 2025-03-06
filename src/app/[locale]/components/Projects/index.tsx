@@ -90,11 +90,12 @@ export default function Projects() {
     {
       name: 'projects10.name',
       description: 'projects10.description',
-      link: "",
-      bgImage: "",
-      js: true,
-      html: true,
-      css: true,
+      link: "laliga.ruugii.com",
+      bgImage: "/img/laliga.png",
+      nextJs: true,
+      tailwind: true,
+      ts: true,
+      git: true
     },
     {
       name: 'projects11.name',
@@ -149,10 +150,12 @@ export default function Projects() {
               html={project.html}
               css={project.css}
               js={project.js}
+              ts={project.ts}
               json={project.json}
               react={project.react}
               nextJs={project.nextJs}
               tailwind={project.tailwind}
+              git={project.git}
               bgImage={project.bgImage}
             />
           ))}
