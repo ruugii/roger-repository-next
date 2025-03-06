@@ -14,7 +14,7 @@ type Message = {
 
 export default function Chat() {
 
-    const t = useTranslations('ia')
+  const t = useTranslations('ia')
 
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
   const [openChat, setOpenChat] = useState(false);
@@ -125,13 +125,20 @@ export default function Chat() {
         </div>
       ) : (
         <button
-          className="bg-white p-4 rounded-full min-h-20 min-w-20 flex items-center justify-center text-black shadow-lg cursor-pointer"
+          className="bg-white p-4 rounded-full min-h-20 min-w-20 flex items-center justify-center text-black shadow-2xl cursor-pointer border-black border-2"
           onClick={() => setOpenChat(true)}
         >
           <Image src="/icon/chat.svg" width={30} height={30} alt="icono de chat, habla con Ruugii GPT" />
           <p className="ml-2">{t('button')}</p>
         </button>
       )}
+      <div className="min-h-20 flex items-center bg-white text-black mt-2 pt-2 px-4 shadow-lg rounded-full border-black border-2">
+      <p>
+        Actualmente ruggiGPT entiende otros idiomas, pero solo responde en español.
+        <br />
+        Currently ruggiGPT understands other languages, but only responds in Spanish.
+      </p>
+      </div>
     </div>
   );
 }
