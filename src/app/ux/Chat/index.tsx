@@ -3,6 +3,7 @@
 import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 type Message = {
@@ -114,7 +115,7 @@ export default function Chat() {
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
             />
             <button onClick={sendButtonClicked} className="bg-yellow-500 p-2 rounded-lg text-white">
-              Enviar
+              <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
             </button>
           </div>
         </div>
