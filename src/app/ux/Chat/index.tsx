@@ -3,6 +3,8 @@
 import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 type Message = {
@@ -11,11 +13,15 @@ type Message = {
 };
 
 export default function Chat() {
+
+  const t = useTranslations('ia')
+
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
   const [openChat, setOpenChat] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Referencia para el scroll
+  const [loadingMessage, setLoadingMessage] = useState(false);
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -33,6 +39,7 @@ export default function Chat() {
   };
 
   async function run(newMessage: string) {
+    setLoadingMessage(true);
     // Agregar mensaje del usuario primero
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -47,13 +54,17 @@ export default function Chat() {
     });
 
     const response = await chatSession.sendMessage(newMessage);
-    const botResponse = response.response.text();
+    if (response) {
+      setLoadingMessage(false);
+      const botResponse = response.response.text();
 
-    // Agregar respuesta del modelo al estado
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { role: "model", parts: [{ text: botResponse }] },
-    ]);
+      // Agregar respuesta del modelo al estado
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: "model", parts: [{ text: botResponse }] },
+      ]);
+    }
+
   }
 
   useEffect(() => {
@@ -87,6 +98,17 @@ export default function Chat() {
                 ))}
               </div>
             ))}
+            {loadingMessage && (
+              <div
+                className={`p-2 rounded-lg ${"bg-gray-200"}`}
+              >
+                <div className="flex flex-row gap-2">
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce"></div>
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce [animation-delay:-.3s]"></div>
+                  <div className="w-2 h-2 rounded-full bg-black animate-bounce [animation-delay:-.5s]"></div>
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} /> {/* Elemento oculto para el scroll */}
           </div>
           <div className="flex gap-2 mt-2">
@@ -97,18 +119,26 @@ export default function Chat() {
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
             />
             <button onClick={sendButtonClicked} className="bg-yellow-500 p-2 rounded-lg text-white">
-              Enviar
+              <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
             </button>
           </div>
         </div>
       ) : (
         <button
-          className="bg-white p-4 rounded-full min-h-20 min-w-20 flex items-center justify-center text-black shadow-lg cursor-pointer"
+          className="bg-white p-4 rounded-full min-h-20 min-w-20 flex items-center justify-center text-black shadow-2xl cursor-pointer border-black border-2"
           onClick={() => setOpenChat(true)}
         >
-          <h1>Chat</h1>
+          <Image src="/icon/chat.svg" width={30} height={30} alt="icono de chat, habla con Ruugii GPT" />
+          <p className="ml-2">{t('button')}</p>
         </button>
       )}
+      <div className="min-h-20 flex items-center bg-white text-black mt-2 pt-2 px-4 shadow-lg rounded-full border-black border-2">
+      <p>
+        Actualmente ruggiGPT entiende otros idiomas, pero solo responde en español.
+        <br />
+        Currently ruggiGPT understands other languages, but only responds in Spanish.
+      </p>
+      </div>
     </div>
   );
 }
