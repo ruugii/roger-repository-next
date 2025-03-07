@@ -17,6 +17,9 @@ export default function Chat() {
   const t = useTranslations('ia')
 
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
+  const [audioEnabled] = useState<boolean>(false);
+  const [textEnabled] = useState<boolean>(true)
+  const [mode, setMode] = useState<'text' | 'audio'>('text')
   const [openChat, setOpenChat] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
@@ -37,6 +40,30 @@ export default function Chat() {
     maxOutputTokens: 8192,
     responseMimeType: "text/plain",
   };
+
+  const changeToAudioIA = () => {
+    setMode('audio')
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia(
+          {
+            audio: true
+          }
+        )
+        .then(() => {
+          return
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    } else {
+      return;
+    }
+  }
+
+  const changeToTextIA = () => {
+    setMode('text')
+  }
 
   async function run(newMessage: string) {
     setLoadingMessage(true);
@@ -85,7 +112,7 @@ export default function Chat() {
   return (
     <div className="fixed bottom-0 right-0 mb-5 mr-5">
       {openChat ? (
-        <div className="bg-white p-4 rounded-lg min-h-[60vh] max-h-[60vh] min-w-80 max-w-80 flex flex-col text-black shadow-lg border-black border-solid border-2">
+        <div className="bg-white p-4 rounded-lg min-h-[60vh] max-h-[60vh] min-w-md max-w-md flex flex-col text-black shadow-lg border-black border-solid border-2">
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-lg font-bold">Chat</h2>
             <button onClick={() => setOpenChat(false)} className="text-red-500">X</button>
@@ -121,12 +148,27 @@ export default function Chat() {
             <div ref={messagesEndRef} /> {/* Elemento oculto para el scroll */}
           </div>
           <div className="flex gap-2 mt-2">
-            <input
-              type="text"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
-            />
+            {mode === 'text' ? (
+              <input
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
+              />
+            ) : (
+              <div
+                className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
+              />
+            )}
+            {mode === 'text' ? (
+              <button onClick={changeToAudioIA} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
+                <p>Cambiar a Audio</p>
+              </button>
+            ) : (
+              <button onClick={changeToTextIA} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!textEnabled}>
+                <p>Cambiar a Texto</p>
+              </button>
+            )}
             <button onClick={sendButtonClicked} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={loadingMessage}>
               <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
             </button>
