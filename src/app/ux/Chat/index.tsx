@@ -9,7 +9,7 @@ import { useEffect, useState, useRef } from "react";
 
 type Message = {
   role: "user" | "model";
-  parts: { text: string }[];
+  parts: { text: string, audio?: boolean }[];
 };
 
 export default function Chat() {
@@ -17,7 +17,7 @@ export default function Chat() {
   const t = useTranslations('ia')
 
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
-  const [audioEnabled] = useState<boolean>(false);
+  const [audioEnabled] = useState<boolean>(true);
   const [textEnabled] = useState<boolean>(true)
   const [mode, setMode] = useState<'text' | 'audio'>('text')
   const [openChat, setOpenChat] = useState(false);
@@ -25,7 +25,12 @@ export default function Chat() {
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Referencia para el scroll
   const [loadingMessage, setLoadingMessage] = useState(false);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
+  const [audioURL, setAudioURL] = useState<string>('')
+  const [recording, setRecording] = useState<boolean>(false);
 
+  // const fileManager = new GoogleAIFileManager(apiKey);
   const genAI = new GoogleGenerativeAI(apiKey);
 
   const model = genAI.getGenerativeModel({
@@ -41,8 +46,61 @@ export default function Chat() {
     responseMimeType: "text/plain",
   };
 
+  const finish = () => {
+    if (mediaRecorder) {
+      mediaRecorder.stop();
+      setRecording(false);
+    }
+  }
+
+  const record = () => {
+    if (mediaRecorder) {
+      setAudioChunks([]);
+      mediaRecorder.start();
+      setRecording(true);
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunks.push(event.data);
+          console.log(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        setAudioURL(URL.createObjectURL(audioBlob));
+        setAudioChunks([])
+      };
+    }
+  }
+
+  useEffect(() => {
+    if (audioURL !== '') {
+      setMessages([...messages, {
+        role: 'user',
+        parts: [{
+          text: audioURL,
+          audio: true
+        }]
+      }])
+
+      // uploadToGemini(audioURL, 'audio/webm')
+    }
+  }, [audioURL, messages])
+
+  // async function uploadToGemini(path: string, mimeType: string) {
+  //   const uploadResult = await fileManager.uploadFile(path, {
+  //     mimeType,
+  //     displayName: path,
+  //   });
+  //   const file = uploadResult.file;
+  //   console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
+  //   return file;
+  // }
+
   const changeToAudioIA = () => {
     setMode('audio')
+    setMessage('')
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
         .getUserMedia(
@@ -50,8 +108,8 @@ export default function Chat() {
             audio: true
           }
         )
-        .then(() => {
-          return
+        .then((stream) => {
+          setMediaRecorder(new MediaRecorder(stream))
         })
         .catch((error) => {
           console.error(error)
@@ -130,7 +188,14 @@ export default function Chat() {
                 className={`p-2 rounded-lg ${msg.role === "model" ? "bg-gray-200" : "bg-yellow-500 text-white"}`}
               >
                 {msg.parts.map((part, i) => (
-                  <p key={i + 1} className="whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: part.text }}></p>
+                  (part.audio ? (
+                    <audio key={i + 1} controls>
+                      <source src={part.text} type="audio/webm" />
+                      Your browser does not support the <code>audio</code> element.
+                    </audio>
+                  ) : (
+                    <p key={i + 1} className="whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: part.text }}></p>
+                  ))
                 ))}
               </div>
             ))}
@@ -148,18 +213,13 @@ export default function Chat() {
             <div ref={messagesEndRef} /> {/* Elemento oculto para el scroll */}
           </div>
           <div className="flex gap-2 mt-2">
-            {mode === 'text' ? (
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
-              />
-            ) : (
-              <div
-                className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
-              />
-            )}
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              disabled={mode === "audio" ? true : false}
+              className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
+            />
             {mode === 'text' ? (
               <button onClick={changeToAudioIA} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
                 <p>Cambiar a Audio</p>
@@ -169,9 +229,15 @@ export default function Chat() {
                 <p>Cambiar a Texto</p>
               </button>
             )}
-            <button onClick={sendButtonClicked} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={loadingMessage}>
-              <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
-            </button>
+            {mode === 'text' ? (
+              <button onClick={sendButtonClicked} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={loadingMessage}>
+                <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
+              </button>
+            ) : (
+              <button onClick={recording ? finish : record} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
+                <Image src="/icon/mic.svg" width={20} height={20} alt="icono para grabar el mensaje a la IA" />
+              </button>
+            )}
           </div>
         </div>
       ) : (
