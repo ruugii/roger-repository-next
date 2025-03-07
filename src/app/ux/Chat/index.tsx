@@ -60,7 +60,7 @@ export default function Chat() {
       setRecording(true);
 
       mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
+        if (event.data.size > 0 && mode === 'audio') {
           audioChunks.push(event.data);
           console.log(event.data);
         }
@@ -121,6 +121,12 @@ export default function Chat() {
 
   const changeToTextIA = () => {
     setMode('text')
+    if (mediaRecorder) {
+      mediaRecorder.stop();
+      setRecording(false)
+      mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      setMediaRecorder(null)
+    }
   }
 
   async function run(newMessage: string) {
