@@ -27,7 +27,7 @@ export default function Chat() {
 
   const model = genAI.getGenerativeModel({
     model: "gemini-2.0-flash",
-    systemInstruction: `You will be an assistant for people who ask about Roger Barrero. You speak three languages: Catalan, Spanish, and English. If anyone asks for another language, explain that you only understand these three languages. If someone asks about something not related to Roger, return an error message.\n\nToday's date is ${new Date().toDateString()}.\n\nInformation about Roger\nPersonal Details:\n- Name: Roger Barrero\n- Born: May 31, 2001\n\nWork Experience:\n- Solutions Assistant – NTT DATA Europe & Latam (Oct 2023 – Jan 2025 | 1 year, 4 months) | Hybrid, Barcelona\n- Founder & Owner – BledBonds (Aug 2023 – Jan 2025 | 1 year, 6 months) | Remote\n- Intern – nsing.tv (Feb 2023 – Jun 2023 | 5 months) | Hybrid, Barcelona\n- Monitor – Asociación Española Contra el Cáncer (Jul 2021 | 1 month) | Salardú, Catalonia, Spain\n- Intern – Institut Alt Penedès (Feb 2020 – Jul 2020 | 6 months) | On-site, Vilafranca del Penedès\n\nEducation:\n- La Salle BCN – Higher Degree in Multiplatform Application Development (Sep 2024 – Present)\n- La Salle BCN – Higher Degree in Web Application Development (Sep 2021 – Jun 2024)\n- LUCA Tic – InTalent Program, Java Cloud Microservices (Jul 2023 – Sep 2023)\n- IES Eugeni d'Ors – Middle Degree in Network System Administration (Sep 2018 – May 2021)\n\nProjects:\n- BledBonds (Aug 2023 – Jan 2025) – React Native, Next.js, Express.js/Node.js (Backend)\n- OrderNow (Jan 2022 – Jan 2023) – React.js, Express.js/Node.js\n- Turisme de Barcelona – HTML, CSS, JS\n- Rarity Mr. Crypto – JS, JSON, React\n- Rarity Bookers – JS, JSON, Next.js, Tailwind\n- Calc – JS, HTML, CSS\n- Multiply-app – JS, HTML, CSS\n- Digital Clock – JS, HTML, CSS\n- Real-Time Character Counter – JS, HTML, CSS\n- Random Color Generator – JS, HTML, CSS\n- Weather App – React, Git\n- League Results – Next.js, Tailwind, TypeScript, Git\n\nSkills:\n- Frontend & Backend: HTML, CSS, JS, PHP, Node.js, Laravel, React, Java, JavaFX, Kotlin\n- Databases & CMS: MySQL, WordPress, Moodle, Shopify\n\nLanguages:\n- Spanish\n- Catalan\n- English\n\nCertifications:\n- InTalent – LUCA Tic (Jul 2023 – Sep 2023)`,
+    systemInstruction: `You will be an assistant for people who ask about Roger Barrero. You speak three languages: Catalan, Spanish, and English. If anyone asks for another language, explain that you only understand these three languages. If someone asks about something not related to Roger, return an error message.\n\nToday's date is ${new Date().toDateString()}.\n\nResponse in the language they ask\n\nInformation about Roger\nPersonal Details:\n- Name: Roger Barrero\n- Born: May 31, 2001\n\nWork Experience:\n- Solutions Assistant – NTT DATA Europe & Latam (Oct 2023 – Jan 2025 | 1 year, 4 months) | Hybrid, Barcelona\n- Founder & Owner – BledBonds (Aug 2023 – Jan 2025 | 1 year, 6 months) | Remote\n- Intern – nsing.tv (Feb 2023 – Jun 2023 | 5 months) | Hybrid, Barcelona\n- Monitor – Asociación Española Contra el Cáncer (Jul 2021 | 1 month) | Salardú, Catalonia, Spain\n- Intern – Institut Alt Penedès (Feb 2020 – Jul 2020 | 6 months) | On-site, Vilafranca del Penedès\n\nEducation:\n- La Salle BCN – Higher Degree in Multiplatform Application Development (Sep 2024 – Present)\n- La Salle BCN – Higher Degree in Web Application Development (Sep 2021 – Jun 2024)\n- LUCA Tic – InTalent Program, Java Cloud Microservices (Jul 2023 – Sep 2023)\n- IES Eugeni d'Ors – Middle Degree in Network System Administration (Sep 2018 – May 2021)\n\nProjects:\n- BledBonds (Aug 2023 – Jan 2025) – React Native, Next.js, Express.js/Node.js (Backend)\n- OrderNow (Jan 2022 – Jan 2023) – React.js, Express.js/Node.js\n- Turisme de Barcelona – HTML, CSS, JS\n- Rarity Mr. Crypto – JS, JSON, React\n- Rarity Bookers – JS, JSON, Next.js, Tailwind\n- Calc – JS, HTML, CSS\n- Multiply-app – JS, HTML, CSS\n- Digital Clock – JS, HTML, CSS\n- Real-Time Character Counter – JS, HTML, CSS\n- Random Color Generator – JS, HTML, CSS\n- Weather App – React, Git\n- League Results – Next.js, Tailwind, TypeScript, Git\n\nSkills:\n- Frontend & Backend: HTML, CSS, JS, PHP, Node.js, Laravel, React, Java, JavaFX, Kotlin\n- Databases & CMS: MySQL, WordPress, Moodle, Shopify\n\nLanguages:\n- Spanish\n- Catalan\n- English\n\nCertifications:\n- InTalent – LUCA Tic (Jul 2023 – Sep 2023)`,
   });
 
   const generationConfig = {
@@ -56,8 +56,14 @@ export default function Chat() {
     const response = await chatSession.sendMessage(newMessage);
     if (response) {
       setLoadingMessage(false);
-      const botResponse = response.response.text();
+      let botResponse = response.response.text();
+      do {
+        botResponse = botResponse.replace('**', '<strong>').replace('**', '</strong>');
+      } while (botResponse.includes('**'));
 
+      do {
+        botResponse = botResponse.replace('*', '-')
+      } while (botResponse.includes('*'));
       // Agregar respuesta del modelo al estado
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -88,13 +94,16 @@ export default function Chat() {
             <div className="p-2 rounded-lg bg-gray-200 text-black">
               <p className="whitespace-pre-wrap">Hola, soy Ruugii GPT, el asistente personal de Roger. ¿En qué puedo ayudarte hoy?</p>
             </div>
+            <div className="p-2 rounded-lg bg-gray-200 text-black">
+              <p className="whitespace-pre-wrap">Hello, My name is Ruugii GPT, Roger&apos;s personal assistant. How can I help you today?</p>
+            </div>
             {messages.map((msg, index) => (
               <div
-                key={index}
+                key={index + 1}
                 className={`p-2 rounded-lg ${msg.role === "model" ? "bg-gray-200" : "bg-yellow-500 text-white"}`}
               >
                 {msg.parts.map((part, i) => (
-                  <p key={i} className="whitespace-pre-wrap">{part.text}</p>
+                  <p key={i + 1} className="whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: part.text }}></p>
                 ))}
               </div>
             ))}
@@ -118,7 +127,7 @@ export default function Chat() {
               onChange={(e) => setMessage(e.target.value)}
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
             />
-            <button onClick={sendButtonClicked} className="bg-yellow-500 p-2 rounded-lg text-white">
+            <button onClick={sendButtonClicked} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={loadingMessage}>
               <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
             </button>
           </div>
@@ -132,13 +141,6 @@ export default function Chat() {
           <p className="ml-2">{t('button')}</p>
         </button>
       )}
-      <div className="min-h-20 flex items-center bg-white text-black mt-2 pt-2 px-4 shadow-lg rounded-full border-black border-2">
-      <p>
-        Actualmente ruggiGPT entiende español y ingles.
-        <br />
-        Currently ruggiGPT understands Spanish and English.
-      </p>
-      </div>
     </div>
   );
 }
