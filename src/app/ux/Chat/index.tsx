@@ -70,6 +70,7 @@ export default function Chat() {
         const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
         setAudioURL(URL.createObjectURL(audioBlob));
         setAudioChunks([])
+        setRecording(false)
       };
     }
   }
@@ -84,6 +85,7 @@ export default function Chat() {
         }]
       }])
 
+      setAudioURL('')
       // uploadToGemini(audioURL, 'audio/webm')
     }
   }, [audioURL, messages])
@@ -195,7 +197,7 @@ export default function Chat() {
               >
                 {msg.parts.map((part, i) => (
                   (part.audio ? (
-                    <audio key={i + 1} controls>
+                    <audio key={i + 1} controls className="w-full">
                       <source src={part.text} type="audio/webm" />
                       Your browser does not support the <code>audio</code> element.
                     </audio>
@@ -221,7 +223,7 @@ export default function Chat() {
           <div className="flex gap-2 mt-2">
             <input
               type="text"
-              value={message}
+              value={mode === 'text' ? message : mode === 'audio' && recording ? 'RECORDING' : ''}
               onChange={(e) => setMessage(e.target.value)}
               disabled={mode === "audio" ? true : false}
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
@@ -238,6 +240,10 @@ export default function Chat() {
             {mode === 'text' ? (
               <button onClick={sendButtonClicked} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={loadingMessage}>
                 <Image src="/icon/send.svg" width={20} height={20} alt="icono para mandar el mensaje a la IA" />
+              </button>
+            ) : mode === 'audio' && recording ? (
+              <button onClick={recording ? finish : record} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
+                <Image src="/icon/send.svg" width={20} height={20} alt="icono para grabar el mensaje de audio a la IA" />
               </button>
             ) : (
               <button onClick={recording ? finish : record} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
