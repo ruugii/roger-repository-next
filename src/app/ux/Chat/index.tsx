@@ -4,6 +4,7 @@ import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
 import Image from "next/image";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
 type Message = {
@@ -25,11 +26,13 @@ export default function Chat(props: {
     changeText
   } = props
 
+  const searchParams = useSearchParams()
+
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
   const [audioEnabled] = useState<boolean>(false);
   const [textEnabled] = useState<boolean>(true)
   const [mode, setMode] = useState<'text' | 'audio'>('text')
-  const [openChat, setOpenChat] = useState(false);
+  const [openChat, setOpenChat] = useState<boolean>(searchParams.get('open')?.toString() === 'true');
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Referencia para el scroll
@@ -169,6 +172,15 @@ export default function Chat(props: {
     if (message.trim() === "") return;
     run(message);
   };
+
+  const params = new URLSearchParams(searchParams)
+  const pathname = usePathname()
+  const { replace } = useRouter()
+  useEffect(() => {
+
+    params.set('open', `${openChat}`)
+    replace(`${pathname}?${params.toString()}`)
+  }, [openChat])
 
   return (
     <div className="fixed bottom-0 right-0 mb-5 mr-5">
