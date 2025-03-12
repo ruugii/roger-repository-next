@@ -3,18 +3,27 @@
 import {
   GoogleGenerativeAI
 } from "@google/generative-ai";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 type Message = {
   role: "user" | "model";
-  parts: { text: string, audio?: boolean }[];
+  parts: { text: string }[];
 };
 
-export default function Chat() {
+export default function Chat(props: {
+  text: string,
+  firstMsg: string,
+  changeAudio: string,
+  changeText: string
+}) {
 
-  const t = useTranslations('ia')
+  const {
+    text,
+    firstMsg,
+    changeAudio,
+    changeText
+  } = props
 
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
   const [audioEnabled] = useState<boolean>(true);
@@ -30,7 +39,6 @@ export default function Chat() {
   const [audioURL, setAudioURL] = useState<string>('')
   const [recording, setRecording] = useState<boolean>(false);
 
-  // const fileManager = new GoogleAIFileManager(apiKey);
   const genAI = new GoogleGenerativeAI(apiKey);
 
   const model = genAI.getGenerativeModel({
@@ -80,30 +88,18 @@ export default function Chat() {
       setMessages([...messages, {
         role: 'user',
         parts: [{
-          text: audioURL,
-          audio: true
+          text: audioURL
         }]
       }])
-
       setAudioURL('')
       // uploadToGemini(audioURL, 'audio/webm')
     }
   }, [audioURL, messages])
 
-  // async function uploadToGemini(path: string, mimeType: string) {
-  //   const uploadResult = await fileManager.uploadFile(path, {
-  //     mimeType,
-  //     displayName: path,
-  //   });
-  //   const file = uploadResult.file;
-  //   console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
-  //   return file;
-  // }
-
   const changeToAudioIA = () => {
     setMode('audio')
     setMessage('')
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    if (navigator?.mediaDevices?.getUserMedia) {
       navigator.mediaDevices
         .getUserMedia(
           {
@@ -124,9 +120,8 @@ export default function Chat() {
   const changeToTextIA = () => {
     setMode('text')
     if (mediaRecorder) {
-      mediaRecorder.stop();
       setRecording(false)
-      mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      setAudioURL('')
       setMediaRecorder(null)
     }
   }
@@ -185,10 +180,7 @@ export default function Chat() {
           </div>
           <div className="flex flex-col gap-2 overflow-auto max-h-[50vh] p-2 flex-1">
             <div className="p-2 rounded-lg bg-gray-200 text-black">
-              <p className="whitespace-pre-wrap">Hola, soy Ruugii GPT, el asistente personal de Roger. ¿En qué puedo ayudarte hoy?</p>
-            </div>
-            <div className="p-2 rounded-lg bg-gray-200 text-black">
-              <p className="whitespace-pre-wrap">Hello, My name is Ruugii GPT, Roger&apos;s personal assistant. How can I help you today?</p>
+              <p className="whitespace-pre-wrap">{firstMsg}</p>
             </div>
             {messages.map((msg, index) => (
               <div
@@ -196,7 +188,7 @@ export default function Chat() {
                 className={`p-2 rounded-lg ${msg.role === "model" ? "bg-gray-200" : "bg-yellow-500 text-white"}`}
               >
                 {msg.parts.map((part, i) => (
-                  (part.audio ? (
+                  (part.text.includes('blob:http://') || part.text.includes('blob:https://') ? (
                     <audio key={i + 1} controls className="w-full">
                       <source src={part.text} type="audio/webm" />
                       Your browser does not support the <code>audio</code> element.
@@ -225,16 +217,16 @@ export default function Chat() {
               type="text"
               value={mode === 'text' ? message : mode === 'audio' && recording ? 'RECORDING' : ''}
               onChange={(e) => setMessage(e.target.value)}
-              disabled={mode === "audio" ? true : false}
+              disabled={mode === "audio"}
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
             />
             {mode === 'text' ? (
               <button onClick={changeToAudioIA} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!audioEnabled}>
-                <p>Cambiar a Audio</p>
+                <p>{changeAudio}</p>
               </button>
             ) : (
               <button onClick={changeToTextIA} className="bg-yellow-500 disabled:bg-yellow-200 p-2 rounded-lg text-white" disabled={!textEnabled}>
-                <p>Cambiar a Texto</p>
+                <p>{changeText}</p>
               </button>
             )}
             {mode === 'text' ? (
@@ -258,7 +250,7 @@ export default function Chat() {
           onClick={() => setOpenChat(true)}
         >
           <Image src="/icon/chat.svg" width={30} height={30} alt="icono de chat, habla con Ruugii GPT" />
-          <p className="ml-2">{t('button')}</p>
+          <p className="ml-2">{text}</p>
         </button>
       )}
     </div>

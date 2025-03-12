@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+import Chat from "../ux/Chat";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
@@ -7,6 +9,7 @@ import Skills from "./components/Skills";
 import Studies from "./components/Studies";
 
 export default function HomePage() {
+    const t = useTranslations()
   return (
     <>
       <Header />
@@ -18,6 +21,12 @@ export default function HomePage() {
           <Skills />
           <Studies />
           <Experience />
+          <Chat
+            text={t('ia.button')}
+            firstMsg={t('ia.msg')}
+            changeAudio={t('ia.audio')}
+            changeText={t('ia.text')}
+          /> 
         </main>
       </div>
     </>

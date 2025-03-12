@@ -184,6 +184,9 @@
     }
   },
   "ia": {
-    "button": "Habla con ruugiiGPT"
+    "button": "Habla con ruugiiGPT",
+    "msg": "Hola, soy Ruugii GPT, el asistente personal de Roger. ¿En qué puedo ayudarte hoy?",
+    "audio": "Cambiar a Audio",
+    "text": "Cambiar a Texto"
   }
 }
