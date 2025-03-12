@@ -26,7 +26,7 @@ export default function Chat(props: {
   } = props
 
   const [apiKey] = useState<string>(process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? "");
-  const [audioEnabled] = useState<boolean>(true);
+  const [audioEnabled] = useState<boolean>(false);
   const [textEnabled] = useState<boolean>(true)
   const [mode, setMode] = useState<'text' | 'audio'>('text')
   const [openChat, setOpenChat] = useState(false);
