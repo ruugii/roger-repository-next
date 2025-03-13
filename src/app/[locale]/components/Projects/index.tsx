@@ -90,7 +90,7 @@ export default function Projects() {
     {
       name: 'projects10.name',
       description: 'projects10.description',
-      link: "laliga.ruugii.com",
+      link: "https://laliga.ruugii.com",
       bgImage: "/img/laliga.png",
       nextJs: true,
       tailwind: true,
@@ -100,11 +100,12 @@ export default function Projects() {
     {
       name: 'projects11.name',
       description: 'projects11.description',
-      link: "",
-      bgImage: "",
-      js: true,
-      html: true,
-      css: true,
+      link: "https://currency.ruugii.com",
+      bgImage: "/img/currency.png",
+      nextJs: true,
+      tailwind: true,
+      ts: true,
+      git: true
     },
     {
       name: 'projects12.name',
