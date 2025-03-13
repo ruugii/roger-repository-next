@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function LangHeader() {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const queryString = searchParams.toString(); // Convierte los parámetros en string
   const hash = typeof window !== "undefined" ? window.location.hash : ""; // Obtiene el hash de la URL
