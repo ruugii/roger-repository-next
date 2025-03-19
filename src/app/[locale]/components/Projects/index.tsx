@@ -110,11 +110,12 @@ export default function Projects() {
     {
       name: 'projects12.name',
       description: 'projects12.description',
-      link: "",
-      bgImage: "",
-      js: true,
-      html: true,
-      css: true,
+      link: "https://flights.ruugii.com/",
+      bgImage: "/img/flights.png",
+      ts: true,
+      nextJs: true,
+      tailwind: true,
+      git: true
     },
   ]
 
