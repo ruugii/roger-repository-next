@@ -1,4 +1,3 @@
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { useTranslations } from "next-intl";
 
 export default function Experience() {
@@ -10,239 +9,211 @@ export default function Experience() {
       <h2 className="text-4xl font-bold">
         {t('title')}
       </h2>
-      <Timeline>
-        <TimelineItem>
-          <TimelineOppositeContent>
+
+      <ol className="relative border-s border-gray-700">
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2025')} - {t('year.2023')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.ntt.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.ntt.position')}
-              </li>
-              {t.rich('enterprice.ntt.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('enterprice.ntt.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.ntt.position')}
+            </li>
+            {t.rich('enterprice.ntt.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2023')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.nsign.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.nsign.position')}
-              </li>
-              {t.rich('enterprice.nsign.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.nsign.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.nsign.position')}
+            </li>
+            {t.rich('enterprice.nsign.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2022')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.aecc.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.aecc.position')}
-              </li>
-              {t.rich('enterprice.aecc.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.aecc.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.aecc.position')}
+            </li>
+            {t.rich('enterprice.aecc.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2022')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.ckm.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.ckm.position')}
-              </li>
-              {t.rich('enterprice.ckm.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.ckm.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.ckm.position')}
+            </li>
+            {t.rich('enterprice.ckm.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2020')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.ckm2.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.ckm2.position')}
-              </li>
-              {t.rich('enterprice.ckm2.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.ckm2.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.ckm2.position')}
+            </li>
+            {t.rich('enterprice.ckm2.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2020')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.ies.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.ies.position')}
-              </li>
-              {t.rich('enterprice.ies.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.ies.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.ies.position')}
+            </li>
+            {t.rich('enterprice.ies.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2019')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('enterprice.tv.title')}
-            </b>
-            <ul>
-              <li>
-                {t('enterprice.tv.position')}
-              </li>
-              {t.rich('enterprice.tv.description', {
-                ul: (chunks) => (
-                  <ul>
-                    {chunks}
-                  </ul>
-                ),
-                li: (chunks) => (
-                  <li>
-                    {chunks}
-                  </li>
-                )
-              })}
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-      </Timeline>
+          </time>
+          <h3 className="font-bold">
+          {t('enterprice.tv.title')}
+          </h3>
+          <ul>
+            <li>
+              {t('enterprice.tv.position')}
+            </li>
+            {t.rich('enterprice.tv.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            })}
+          </ul>
+        </li>
+      </ol>
     </section>
   )
 }

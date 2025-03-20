@@ -1,4 +1,3 @@
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { useTranslations } from "next-intl";
 
 export default function Studies() {
@@ -10,183 +9,136 @@ export default function Studies() {
       <h2 className="text-4xl font-bold">
         {t('title')}
       </h2>
-      <Timeline sx={{ width: "100%" }}>
-        <TimelineItem sx={{ display: "none" }}>
-          <TimelineOppositeContent></TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent></TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+      <ol className="relative border-s border-gray-700">
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2024')} - {t('year.current')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.lasalleonline')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.DAM')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.lasalleonline')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.DAM')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2021')} - {t('year.2024')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.lasallegracia')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.DAW')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.lasallegracia')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.DAW')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2018')} - {t('year.2021')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.eugeni')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.SMX')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.eugeni')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.SMX')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2023')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.lucatic')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.InTalent')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.lucatic')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.InTalent')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2022')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.udemy')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.Solidity')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.udemy')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.Solidity')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2021')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.CET')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.Diamizer')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.CET')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.Diamizer')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2020')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.CET')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.monitor')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem sx={{ minHeight: "80px" }}>
-          <TimelineOppositeContent>
+          </time>
+          <h3 className="font-bold">
+            {t('school.CET')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.monitor')}
+            </li>
+          </ul>
+        </li>
+        <li className="mb-4 ms-4">
+          <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none ">
             <b className="font-bold">
               {t('year.2018')}
             </b>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ width: "12px", height: "12px" }} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <b className="font-bold">
-              {t('school.CISCO')}
-            </b>
-            <ul>
-              <li>
-                {t('degree.CCNA')}
-              </li>
-            </ul>
-          </TimelineContent>
-        </TimelineItem>
-      </Timeline>
+          </time>
+          <h3 className="font-bold">
+            {t('school.CISCO')}
+          </h3>
+          <ul>
+            <li>
+              {t('degree.CCNA')}
+            </li>
+          </ul>
+        </li>
+      </ol>
     </section>
   )
 }
