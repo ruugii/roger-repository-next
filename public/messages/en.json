@@ -69,8 +69,8 @@
       "description": "It is an app that shows you the currency exchange in real time."
     },
     "projects12": {
-      "name": "Weather in your city",
-      "description": "It is an app that shows you the weather in your city."
+      "name": "Flights arrival in Barcelona",
+      "description": "It is an app that shows all the flights that arrive at Barcelona."
     },
     "javafx1": {
       "name": "Database reader",
