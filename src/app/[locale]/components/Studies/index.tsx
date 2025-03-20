@@ -10,7 +10,7 @@ export default function Studies() {
       <h2 className="text-4xl font-bold">
         {t('title')}
       </h2>
-      <Timeline>
+      <Timeline sx={{ width: "100%" }}>
         <TimelineItem sx={{ display: "none" }}>
           <TimelineOppositeContent></TimelineOppositeContent>
           <TimelineSeparator>
