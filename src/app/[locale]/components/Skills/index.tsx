@@ -46,6 +46,36 @@ export default function Skills() {
     },
     {
       name: "Shopify",
+    },
+    {
+      name: "Solidity",
+    },
+    {
+      name: "Angular"
+    },
+    {
+      name: "Vue.js"
+    },
+    {
+      name: "Next.js"
+    },
+    {
+      name: "TailwindCSS"
+    },
+    {
+      name: "AWS"
+    },
+    {
+      name: "Docker"
+    },
+    {
+      name: "Git"
+    },
+    {
+      name: "Jenkins"
+    },
+    {
+      name: "Jira"
     }
   ]
 
