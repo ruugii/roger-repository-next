@@ -29,7 +29,6 @@ export default function About() {
             <Link className=" underline hover:text-gray-700" href="https://www.ruugii.com/">{chunks}</Link>
           )
         })}
-        If you want more information about me, you can acces to my <Link className=" underline hover:text-gray-700" href="https://www.linkedin.com/in/roger-barrero-sorribas/">Linkedin</Link> or my <Link className=" underline hover:text-gray-700" href="https://www.ruugii.com/">personal web portfolo</Link>.
       </p>
       <p className="text-2xl">
         {t.rich('description5', {
