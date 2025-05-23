@@ -112,7 +112,7 @@ export default function Experience() {
           {
             date: `${t('year.2019')}`,
             title: t('enterprice.tv.title'),
-            description: t.rich('enterprice.ntt.description', {
+            description: t.rich('enterprice.tv.description', {
               ul: (chunks) => (
                 <ul>
                   {chunks}
