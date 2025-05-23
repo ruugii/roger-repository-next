@@ -117,6 +117,16 @@ export default function Projects() {
       tailwind: true,
       git: true
     },
+    {
+      name: 'projects13.name',
+      description: 'projects13.description',
+      link: "https://ckm.ruugii.com/",
+      bgImage: "/img/ckm.png",
+      ts: true,
+      nextJs: true,
+      tailwind: true,
+      git: true
+    },
   ]
 
   const javafx = [

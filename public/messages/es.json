@@ -72,6 +72,10 @@
       "name": "Vuelos con llegada a Barcelona",
       "description": "Es una APP que te muestra los vuelos que llegan a Barcelona."
     },
+    "projects13": {
+      "name": "Rediseño de la pagina web de Comkedem",
+      "description": "Rediseño de la pagina web de la asociacion Comkedem para mejorar la UX i la UI"
+    },
     "javafx1": {
       "name": "Lector de Base de Datos",
       "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es una aplicacion en java que te lee las bases de datos de tu servidor local y te muestra los datos."

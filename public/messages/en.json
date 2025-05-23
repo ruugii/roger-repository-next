@@ -72,6 +72,10 @@
       "name": "Flights arrival in Barcelona",
       "description": "It is an app that shows all the flights that arrive at Barcelona."
     },
+    "projects13": {
+      "name": "Comkedem web redesign",
+      "description": "It the redesign for the CKM app to improve the UX and UI."
+    },
     "javafx1": {
       "name": "Database reader",
       "description": "This project is a JavaFX application that reads a database and shows the data in a table."
