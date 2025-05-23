@@ -1,0 +1,192 @@
+{
+  "menu": {
+    "home": "Inici",
+    "about": "Sobre mi",
+    "projects": "Projectes",
+    "skills": "Habilitats",
+    "studies": "Estudis",
+    "experience": "Experiència"
+  },
+  "home": {
+    "welcome": "Benvingut al meu portafoli",
+    "description": "Em dic Roger, soc un enginyer fullstack curiós a qui li encanta aprendre coses noves i construir coses genials."
+  },
+  "about": {
+    "title": "Sobre mi",
+    "description": "Actualment visc a Barcelona, Espanya. Tinc {age} anys. Estic estudiant el cicle formatiu de grau superior en Desenvolupament d'Aplicacions Multiplataforma a l'institut de La Salle Online.",
+    "description2": "Vaig començar a aprendre sobre desenvolupament web l’any 2019, en el grau mitjà de Sistemes Microinformàtics i Xarxes a l’assignatura de \"Aplicacions web\", on vaig aprendre a utilitzar diferents tecnologies i gestors de contingut com HTML, CSS, JavaScript, Wordpress i Moodle.",
+    "description3": "Actualment estic millorant les meves habilitats en el desenvolupament web aprenent tecnologies de backend com PHP, MySQL, Laravel o Node. També estic aprenent tecnologies de frontend com React o Next.js. Per completar-me, tinc alguns coneixements sobre disseny UX/UI.",
+    "description4": "Si vols més informació sobre mi, pots accedir al meu <guidelines>Linkedin</guidelines> o al meu <portfolio>portafoli personal</portfolio>.",
+    "description5": "Si vols contactar amb mi, pots enviar-me un correu electrònic a <email>roger.barrero.sorribas@gmail.com</email>."
+  },
+  "projects": {
+    "title": {
+      "web": "Projectes web",
+      "javafx": "Projectes JavaFX"
+    },
+    "projects1": {
+      "name": "Ciutat de Barcelona",
+      "description": "Aquest projecte, realitzat per a una assignatura del grau superior de DAW a La Salle, és una pàgina informativa sobre la ciutat de Barcelona i rodalies. Està fet amb HTML, CSS i JavaScript."
+    },
+    "projects2": {
+      "name": "Calculadora de rareses de Mr.Crypto",
+      "description": "Mr.Crypto és una comunitat privada a la qual només es pot accedir a través d’un col·leccionable digital. Aquest projecte fet amb React.js és una calculadora de rareses dels col·leccionables."
+    },
+    "projects3": {
+      "name": "Calculadora de rareses de Bookers",
+      "description": "Bookers és una comunitat privada de lectors a la qual només es pot accedir a través d’un col·leccionable digital. Aquest projecte, fet amb Next.js i Tailwind, és una calculadora de rareses dels col·leccionables."
+    },
+    "projects4": {
+      "name": "Calculadora",
+      "description": "És una calculadora preparada per realitzar operacions matemàtiques bàsiques."
+    },
+    "projects5": {
+      "name": "App de multiplicació",
+      "description": "És una aplicació que et dona multiplicacions i les has de resoldre."
+    },
+    "projects6": {
+      "name": "Rellotge digital",
+      "description": "És un rellotge digital que mostra l’hora actual."
+    },
+    "projects7": {
+      "name": "Comptador de caràcters",
+      "description": "És una aplicació que compta els caràcters d’un text en temps real."
+    },
+    "projects8": {
+      "name": "Generador de colors aleatoris",
+      "description": "És una aplicació que genera colors aleatoris i et mostra el seu codi hexadecimal."
+    },
+    "projects9": {
+      "name": "Temps a la teva ciutat",
+      "description": "És una aplicació que et mostra el temps a la teva ciutat."
+    },
+    "projects10": {
+      "name": "Resultats de la lliga",
+      "description": "És una aplicació que et mostra els resultats de la lliga i els pròxims partits."
+    },
+    "projects11": {
+      "name": "Canvi de moneda",
+      "description": "És una app que et mostra el canvi de moneda en temps real."
+    },
+    "projects12": {
+      "name": "Vols amb arribada a Barcelona",
+      "description": "És una APP que et mostra els vols que arriben a Barcelona."
+    },
+    "javafx1": {
+      "name": "Lector de base de dades",
+      "description": "Aquest projecte, realitzat per a una assignatura del grau superior de DAW a La Salle, és una aplicació en Java que llegeix les bases de dades del teu servidor local i et mostra les dades."
+    },
+    "javafx2": {
+      "name": "Joc del 7 i mig",
+      "description": "Aquest projecte, realitzat per a una assignatura del grau superior de DAW a La Salle, és el clàssic joc de cartes del 7 i mig."
+    }
+  },
+  "skills": {
+    "title": "Habilitats"
+  },
+  "studies": {
+    "title": "Estudis",
+    "year": {
+      "current": "Actualitat",
+      "2024": "2024",
+      "2023": "2023",
+      "2022": "2022",
+      "2021": "2021",
+      "2020": "2020",
+      "2019": "2019",
+      "2018": "2018",
+      "2017": "2017",
+      "2016": "2016",
+      "2015": "2015",
+      "2014": "2014",
+      "2013": "2013",
+      "2012": "2012",
+      "2011": "2011",
+      "2010": "2010"
+    },
+    "school": {
+      "lasalleonline": "La Salle Online",
+      "lasallegracia": "La Salle Gràcia",
+      "eugeni": "IES Eugeni d'Ors",
+      "lucatic": "Luca TIC",
+      "udemy": "Udemy",
+      "CET": "CET 10",
+      "CISCO": "CISCO"
+    },
+    "degree": {
+      "DAM": "CFGS Desenvolupament d'Aplicacions Multiplataforma",
+      "DAW": "CFGS Desenvolupament d'Aplicacions Web",
+      "SMX": "CFGM Sistemes Microinformàtics i Xarxes",
+      "InTalent": "Programa InTalent, Microserveis amb Java",
+      "Solidity": "Contractes Intel·ligents amb Solidity de la A a la Z",
+      "Diamizer": "Curs de dinamitzador d'activitats multiesportives",
+      "monitor": "Curs de monitor de lleure",
+      "CCNA": "Títol en xarxes"
+    }
+  },
+  "experience": {
+    "title": "Experiència",
+    "year": {
+      "current": "Actualitat",
+      "2025": "2025",
+      "2024": "2024",
+      "2023": "2023",
+      "2022": "2022",
+      "2021": "2021",
+      "2020": "2020",
+      "2019": "2019",
+      "2018": "2018",
+      "2017": "2017",
+      "2016": "2016",
+      "2015": "2015",
+      "2014": "2014",
+      "2013": "2013",
+      "2012": "2012",
+      "2011": "2011",
+      "2010": "2010"
+    },
+    "enterprice": {
+      "ntt": {
+        "title": "NTT Data Europe & Latam",
+        "position": "Enginyer Junior Frontend Developer",
+        "description": "<ul><li>Naturgy (UFD) Projecte del portal privat web</li></ul>"
+      },
+      "nsign": {
+        "title": "NSIGN.TV",
+        "position": "Trainee Frontend Engineer",
+        "description": "<ul><li>Disseny i desenvolupament de diverses funcions per als clients<ul><li>Vols amb arribada a Barcelona</li><li>Canvi Euro - Dòlar en temps real</li><li>Visualització dels pròxims partits de La Lliga</li><li>Temps a la teva localització (o la que indiqui el navegador)</li><li>Visualització dels pròxims esdeveniments al teu calendari</li></ul></li><li>Anàlisi de la UX de la plataforma i propostes de millora</li></ul>"
+      },
+      "aecc": {
+        "title": "Associació Espanyola Contra el Càncer",
+        "position": "Monitor de colònies d'estiu",
+        "description": "<ul>Realització de diferents tasques per dinamitzar el grup d'infants del grup mitjà (10 - 13 anys) en els campaments d'estiu que anualment organitza l’Associació Espanyola Contra el Càncer a Salardú (Vall d'Aran)</ul>"
+      },
+      "ckm": {
+        "title": "Associació Comkedem",
+        "position": "Voluntari",
+        "description": "<ul><li>Disseny de les diferents seccions del lloc web per a una futura actualització en WordPress</li></ul>"
+      },
+      "ckm2": {
+        "title": "Associació Comkedem",
+        "position": "Monitor de casal i campament d'estiu",
+        "description": "<ul><li>Realització de diferents tasques de dinamització grupal al casal esportiu (entre 8 i 15 anys) i a les Estades Autònomes (entre 16 i 18 anys) que es realitzen cada estiu</li></ul>"
+      },
+      "ies": {
+        "title": "IES Alt Penedès",
+        "position": "Tècnic Informàtic",
+        "description": "<ul><li>Instal·lació, actualització i configuració de sistemes operatius i programari per a portàtils nous.</li><li>Instal·lació d’equips audiovisuals a les aules.</li><li>Elaboració d’audiovisuals per a les jornades de portes obertes del curs acadèmic 2020-2021.</li><li>Col·laboració en la instal·lació i configuració de la plataforma Moodle per a les classes telemàtiques durant la pandèmia.</li></ul>"
+      },
+      "tv": {
+        "title": "Los espabilados",
+        "position": "Extra de sèries i pel·lícules",
+        "description": "<ul><li>Extra a la sèrie 'Los espabilados' de Movistar Plus+</li></ul>"
+      }
+    }
+  },
+  "ia": {
+    "button": "Parla amb ruugiiGPT",
+    "msg": "Hola, soc Ruugii GPT, l’assistent personal d’en Roger. En què et puc ajudar avui?",
+    "audio": "Canvia a Àudio",
+    "text": "Canvia a Text"
+  }
+}

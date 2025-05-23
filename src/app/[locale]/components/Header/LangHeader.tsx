@@ -11,12 +11,26 @@ export default function LangHeader() {
   return (
     <ul className="flex gap-4">
       <li className="text-black hover:text-gray-800 hover:underline">
-        <Link href={`/es${queryString ? `?${queryString}` : ""}${hash}`} locale="es">
+        <Link
+          href={`/es${queryString ? `?${queryString}` : ""}${hash}`}
+          locale="es"
+        >
           ES
         </Link>
       </li>
       <li className="text-black hover:text-gray-800 hover:underline">
-        <Link href={`/en${queryString ? `?${queryString}` : ""}${hash}`} locale="en">
+        <Link
+          href={`/cat${queryString ? `?${queryString}` : ""}${hash}`}
+          locale="cat"
+        >
+          CAT
+        </Link>
+      </li>
+      <li className="text-black hover:text-gray-800 hover:underline">
+        <Link
+          href={`/en${queryString ? `?${queryString}` : ""}${hash}`}
+          locale="en"
+        >
           EN
         </Link>
       </li>
