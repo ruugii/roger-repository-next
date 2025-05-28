@@ -184,6 +184,11 @@
         "title": "Los espabilados",
         "position": "Extra de sèries i pel·lícules",
         "description": "<ul><li>Extra a la sèrie 'Los espabilados' de Movistar Plus+</li></ul>"
+      },
+      "cem": {
+        "title": "BCR CEM L'Hospitalet",
+        "position": "Monitor d'activitats extraescolars",
+        "description": "<ul><li>Monitor d'activitats de sensibilització sobre la discapacitat en escoles utilitzant diferents esports adaptats.</li></ul>"
       }
     }
   },
