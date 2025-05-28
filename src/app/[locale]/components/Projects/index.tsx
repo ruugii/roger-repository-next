@@ -121,7 +121,7 @@ export default function Projects() {
       name: 'projects13.name',
       description: 'projects13.description',
       link: "https://ckm.ruugii.com/",
-      bgImage: "/img/ckm.png",
+      bgImage: "/img/CKM.png",
       ts: true,
       nextJs: true,
       tailwind: true,
