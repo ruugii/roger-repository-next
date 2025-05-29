@@ -196,6 +196,7 @@
     "button": "Speak with ruugiiGPT",
     "msg": "Hello, My name is Ruugii GPT, Roger's personal assistant. How can I help you today?",
     "audio": "Change to audio",
-    "text": "Change to text"
+    "text": "Change to text",
+    "host": "powered by: Gemini API"
   }
 }

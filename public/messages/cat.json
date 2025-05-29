@@ -196,6 +196,7 @@
     "button": "Parla amb ruugiiGPT",
     "msg": "Hola, soc Ruugii GPT, l’assistent personal d’en Roger. En què et puc ajudar avui?",
     "audio": "Canvia a Àudio",
-    "text": "Canvia a Text"
+    "text": "Canvia a Text",
+    "host": "powered by: Gemini API"
   }
 }

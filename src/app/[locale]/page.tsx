@@ -23,6 +23,7 @@ export default function HomePage() {
           <Experience />
           <Chat
             text={t('ia.button')}
+            power={t('ia.host')}
             firstMsg={t('ia.msg')}
             changeAudio={t('ia.audio')}
             changeText={t('ia.text')}
