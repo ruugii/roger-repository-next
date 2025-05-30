@@ -185,7 +185,7 @@ export default function Chat(props: {
   }, [openChat]);
 
   return (
-    <div className="fixed bottom-0 right-0 mb-5 mr-5">
+    <div className="fixed bottom-0 right-0 mb-5 mr-5 hidden md:block">
       {openChat ? (
         <div className="bg-white p-4 rounded-lg min-h-[60vh] max-h-[60vh] min-w-md max-w-md flex flex-col text-black shadow-lg border-black border-solid border-2">
           <div className="flex justify-between items-center mb-2">
