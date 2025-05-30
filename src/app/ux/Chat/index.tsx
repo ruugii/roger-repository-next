@@ -251,13 +251,14 @@ export default function Chat(props: {
               className="flex-1 p-2 rounded-lg border-yellow-500 border-2 border-solid"
             />
             {mode === "text" ? (
-              <button
-                onClick={changeToAudioIA}
-                className="bg-yellow-500 disabled:bg-yellow-200 disabled:text-black/50 p-2 rounded-lg text-white"
-                disabled={!audioEnabled}
-              >
-                <p>{changeAudio}</p>
-              </button>
+              <></>
+              // <button
+              //   onClick={changeToAudioIA}
+              //   className="bg-yellow-500 disabled:bg-yellow-200 disabled:text-black/50 p-2 rounded-lg text-white"
+              //   disabled={!audioEnabled}
+              // >
+              //   <p>{changeAudio}</p>
+              // </button>
             ) : (
               <button
                 onClick={changeToTextIA}
