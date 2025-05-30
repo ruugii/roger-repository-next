@@ -6,7 +6,7 @@ export default function OptionsHeader() {
   const t = useTranslations('menu')
 
   return (
-    <ul className="flex gap-4">
+    <ul className=" hidden lg:flex gap-4">
       <li className=" text-black hover:text-gray-800 hover:underline">
         <Link href="#home">{t('home')}</Link>
       </li>

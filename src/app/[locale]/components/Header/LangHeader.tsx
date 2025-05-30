@@ -9,7 +9,7 @@ export default function LangHeader() {
   const hash = typeof window !== "undefined" ? window.location.hash : ""; // Obtiene el hash de la URL
 
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-4 mx-auto lg:mx-0">
       <li className="text-black hover:text-gray-800 hover:underline">
         <Link
           href={`/es${queryString ? `?${queryString}` : ""}${hash}`}
