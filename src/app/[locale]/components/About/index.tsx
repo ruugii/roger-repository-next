@@ -11,16 +11,16 @@ export default function About() {
       <h1 className="text-4xl font-bold">
         {t('title')}
       </h1>
-      <p className="text-2xl">
+      <p className="text-2xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
         {t('description', { age: calcAge() })}
       </p>
-      <p className="text-2xl">
+      <p className="text-2xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
         {t('description2')}
       </p>
-      <p className="text-2xl">
+      <p className="text-2xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
         {t('description3')}
       </p>
-      <p className="text-2xl">
+      <p className="text-2xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
         {t.rich('description4', {
           guidelines: (chunks) => (
             <Link className=" underline hover:text-gray-700" href="https://www.linkedin.com/in/roger-barrero-sorribas/">{chunks}</Link>
@@ -30,7 +30,7 @@ export default function About() {
           )
         })}
       </p>
-      <p className="text-2xl">
+      <p className="text-2xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
         {t.rich('description5', {
           email: (chunks) => (
             <Link className=" underline hover:text-gray-700" href="mailto:roger.barrero.sorribas@gmail.com">{chunks}</Link>
