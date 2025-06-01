@@ -76,6 +76,10 @@
       "name": "Rediseño de la pagina web de Comkedem",
       "description": "Rediseño de la pagina web de la asociacion Comkedem para mejorar la UX i la UI"
     },
+    "projects14": {
+      "name": "castIA",
+      "description": "Entrenamiento de una Inteligencia artificial y frontend del aplicativo para ayudar a preparar la temporada de manera eficiente."
+    },
     "javafx1": {
       "name": "Lector de Base de Datos",
       "description": "Este proyecto, realizado para una asigntura del grado superior de DAW en la La Salle, es una aplicacion en java que te lee las bases de datos de tu servidor local y te muestra los datos."
@@ -187,8 +191,13 @@
       },
       "cem": {
         "title": "BCR CEM L'Hospitalet",
-        "position":"Monitor de actividades extraescolares",
+        "position": "Monitor de actividades extraescolares",
         "description": "<ul><li>Monitor de actividades de sensibilización de la discapacidad en colegios usando distintos deportes adaptados.</li></ul>"
+      },
+      "bledbonds": {
+        "title": "BledBonds",
+        "position": "Propietario",
+        "description": "<ul><li>Diseño, desarrollo y despliegue de una aplicación de citas para personas con discapacidad, que incluye una plataforma web y una aplicación móvil.</li><li>El proyecto se centró no solo en la calidad del código, sino también en la accesibilidad y la experiencia del usuario.</li></ul>"
       }
     }
   },

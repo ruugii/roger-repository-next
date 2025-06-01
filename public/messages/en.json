@@ -76,6 +76,10 @@
       "name": "Comkedem web redesign",
       "description": "It the redesign for the CKM app to improve the UX and UI."
     },
+    "projects14": {
+      "name": "castIA",
+      "description": "Training of an artificial intelligence and frontend development of the application to help prepare the season efficiently."
+    },
     "javafx1": {
       "name": "Database reader",
       "description": "This project is a JavaFX application that reads a database and shows the data in a table."
@@ -189,6 +193,11 @@
         "title": "BCR CEM L'Hospitalet",
         "position": "After-school activities instructor",
         "description": "<ul><li>Instructor of disability awareness activities in schools using various adapted sports.</li></ul>"
+      },
+      "bledbonds": {
+        "title": "BledBonds",
+        "position": "Owner",
+        "description": "<ul><li>Design, development, and deployment of a dating app for people with disabilities, including a web platform and a mobile application.</li><li>The project focused not only on code quality but also on accessibility and user experience.</li></ul>"
       }
     }
   },

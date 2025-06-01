@@ -76,6 +76,10 @@
       "name": "Redisseny de la pàgina web de Comkedem",
       "description": "Redisseny de la pàgina web de l'associació Comkedem per millorar l'experiència d'usuari (UX) i la interfície d'usuari (UI)."
     },
+    "projects14": {
+      "name": "castIA",
+      "description": "Entrenament d'una intel·ligència artificial i desenvolupament del frontend de l'aplicació per ajudar a preparar la temporada de manera eficient."
+    },
     "javafx1": {
       "name": "Lector de base de dades",
       "description": "Aquest projecte, realitzat per a una assignatura del grau superior de DAW a La Salle, és una aplicació en Java que llegeix les bases de dades del teu servidor local i et mostra les dades."
@@ -189,6 +193,11 @@
         "title": "BCR CEM L'Hospitalet",
         "position": "Monitor d'activitats extraescolars",
         "description": "<ul><li>Monitor d'activitats de sensibilització sobre la discapacitat en escoles utilitzant diferents esports adaptats.</li></ul>"
+      },
+      "bledbonds": {
+        "title": "BledBonds",
+        "position": "Propietari",
+        "description": "<ul><li>Disseny, desenvolupament i desplegament d'una aplicació de cites per a persones amb discapacitat, que inclou una plataforma web i una aplicació mòbil.</li><li>El projecte es va centrar no només en la qualitat del codi, sinó també en l'accessibilitat i l'experiència de l'usuari.</li></ul>"
       }
     }
   },

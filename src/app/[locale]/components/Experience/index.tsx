@@ -30,9 +30,25 @@ export default function Experience() {
             }),
           },
           {
-            date: `${t('year.2025')} - ${t('year.2023')}`,
+            date: `${t('year.2023')} - ${t('year.2025')}`,
             title: t('enterprice.ntt.title'),
             description: t.rich('enterprice.ntt.description', {
+              ul: (chunks) => (
+                <ul>
+                  {chunks}
+                </ul>
+              ),
+              li: (chunks) => (
+                <li>
+                  {chunks}
+                </li>
+              )
+            }),
+          },
+          {
+            date: `${t('year.2023')} - ${t('year.2025')}`,
+            title: t('enterprice.bledbonds.title'),
+            description: t.rich('enterprice.bledbonds.description', {
               ul: (chunks) => (
                 <ul>
                   {chunks}
