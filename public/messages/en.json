@@ -198,6 +198,11 @@
         "title": "BledBonds",
         "position": "Owner",
         "description": "<ul><li>Design, development, and deployment of a dating app for people with disabilities, including a web platform and a mobile application.</li><li>The project focused not only on code quality but also on accessibility and user experience.</li></ul>"
+      },
+      "leti": {
+        "title": "LETI Pharma",
+        "position": "Data Digitization",
+        "description": "<ul><li>Digitization of prescription data from the vaccines department using an internal platform.</li><li>Creation of new patients through SAP.</li><li>Conducting calls to verify data.</li></ul>"
       }
     }
   },

@@ -198,6 +198,11 @@
         "title": "BledBonds",
         "position": "Propietario",
         "description": "<ul><li>Diseño, desarrollo y despliegue de una aplicación de citas para personas con discapacidad, que incluye una plataforma web y una aplicación móvil.</li><li>El proyecto se centró no solo en la calidad del código, sino también en la accesibilidad y la experiencia del usuario.</li></ul>"
+      },
+      "leti": {
+        "title": "LETI Pharma",
+        "position": "Digitalización de datos",
+        "description": "<ul><li>Digitalización de los datos de las recetas del departamento de vacunas a través de una plataforma interna.</li><li>Creación de nuevos pacientes mediante SAP.</li><li>Realización de llamadas para la verificación de datos.</li></ul>"
       }
     }
   },
