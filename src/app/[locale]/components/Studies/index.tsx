@@ -13,6 +13,11 @@ export default function Studies() {
       <Timeline
         items={[
           {
+            date: `${t('year.2025')} - ${t('year.current')}`,
+            title: t('school.UOC'),
+            description: t('degree.Engineering'),
+          },
+          {
             date: `${t('year.2024')} - ${t('year.current')}`,
             title: t('school.lasalleonline'),
             description: t('degree.DAM'),

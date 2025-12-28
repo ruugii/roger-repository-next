@@ -96,6 +96,7 @@
     "title": "Estudios",
     "year": {
       "current": "Actualidad",
+      "2025": "2025",
       "2024": "2024",
       "2023": "2023",
       "2022": "2022",
@@ -113,6 +114,7 @@
       "2010": "2010"
     },
     "school": {
+      "UOC": "UOC - Universitat Oberta de Catalunya",
       "lasalleonline": "La Salle Online",
       "lasallegracia": "La Salle Gracia",
       "eugeni": "IES Eugeni d'Ors",
@@ -122,6 +124,7 @@
       "CISCO": "CISCO"
     },
     "degree": {
+      "Engineering": "Ingeniería Informática",
       "DAM": "GFGS Desarrollo de Aplicaciones Multiplataforma",
       "DAW": "CFGS Desarrollo de Aplicaciones Web",
       "SMX": "CFGM Sistemas Microinformáticos y Redes",

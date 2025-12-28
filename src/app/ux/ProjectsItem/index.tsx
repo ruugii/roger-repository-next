@@ -18,6 +18,7 @@ interface ProjectInteface {
   java?: boolean;
   javaFX?: boolean;
   git?: boolean;
+  expo?: boolean
   bgImage?: string;
 }
 
@@ -40,6 +41,7 @@ export default function ProjectsItem(props: ProjectInteface) {
     java,
     javaFX,
     git,
+    expo,
     bgImage
   } = props;
   return (
@@ -72,6 +74,7 @@ export default function ProjectsItem(props: ProjectInteface) {
                 {java && <p>Java</p>}
                 {javaFX && <p>JavaFX</p>}
                 {git && <p>Git</p>}
+                {expo && <p>expo</p>}
               </div>
             </div>
           ) : (
