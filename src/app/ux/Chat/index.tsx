@@ -43,19 +43,6 @@ export default function Chat(props: {
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-    systemInstruction: `You will be an assistant for people who ask about Roger Barrero. You speak three languages: Catalan, Spanish, and English. If anyone asks for another language, explain that you only understand these three languages. If someone asks about something not related to Roger, return an error message.\n\nToday's date is ${new Date().toDateString()}.\n\nResponse in the language they ask\n\nInformation about Roger\nPersonal Details:\n- Name: Roger Barrero\n- Born: May 31, 2001\n\nWork Experience:\n- Solutions Assistant – NTT DATA Europe & Latam (Oct 2023 – Jan 2025 | 1 year, 4 months) | Hybrid, Barcelona\n- Founder & Owner – BledBonds (Aug 2023 – Jan 2025 | 1 year, 6 months) | Remote\n- Intern – nsing.tv (Feb 2023 – Jun 2023 | 5 months) | Hybrid, Barcelona\n- Monitor – Asociación Española Contra el Cáncer (Jul 2021 | 1 month) | Salardú, Catalonia, Spain\n- Intern – Institut Alt Penedès (Feb 2020 – Jul 2020 | 6 months) | On-site, Vilafranca del Penedès\n\nEducation:\n- La Salle BCN – Higher Degree in Multiplatform Application Development (Sep 2024 – Present)\n- La Salle BCN – Higher Degree in Web Application Development (Sep 2021 – Jun 2024)\n- LUCA Tic – InTalent Program, Java Cloud Microservices (Jul 2023 – Sep 2023)\n- IES Eugeni d'Ors – Middle Degree in Network System Administration (Sep 2018 – May 2021)\n\nProjects:\n- BledBonds (Aug 2023 – Jan 2025) – React Native, Next.js, Express.js/Node.js (Backend)\n- OrderNow (Jan 2022 – Jan 2023) – React.js, Express.js/Node.js\n- Turisme de Barcelona – HTML, CSS, JS\n- Rarity Mr. Crypto – JS, JSON, React\n- Rarity Bookers – JS, JSON, Next.js, Tailwind\n- Calc – JS, HTML, CSS\n- Multiply-app – JS, HTML, CSS\n- Digital Clock – JS, HTML, CSS\n- Real-Time Character Counter – JS, HTML, CSS\n- Random Color Generator – JS, HTML, CSS\n- Weather App – React, Git\n- League Results – Next.js, Tailwind, TypeScript, Git\n- Currency exchange – Next.js, Tailwind, TypeScript, Git\n- Flights in Barcelona – Next.js, Tailwind, TypeScript, Git\n\nSkills:\n- Frontend & Backend: HTML, CSS, JS, PHP, Node.js, Laravel, React, Java, JavaFX, Kotlin\n- Databases & CMS: MySQL, WordPress, Moodle, Shopify\n\nLanguages:\n- Spanish\n- Catalan\n- English\n\nCertifications:\n- InTalent – LUCA Tic (Jul 2023 – Sep 2023)`,
-  });
-
-  const generationConfig = {
-    temperature: 1,
-    topP: 0.95,
-    topK: 40,
-    maxOutputTokens: 8192,
-    responseMimeType: "text/plain",
-  };
-
   const finish = () => {
     if (mediaRecorder) {
       mediaRecorder.stop();
@@ -141,29 +128,37 @@ export default function Chat(props: {
 
     setMessage("");
 
-    const chatSession = model.startChat({
-      generationConfig,
-      history: messages, // Enviar historial de la conversación
-    });
+    try {
+      fetch("https://n8n.petons.cat/webhook/0969abbd-d4f3-493b-a587-54e66ea9a0cd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: newMessage, history: messages }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Respuesta del webhook:", data);
+          let botResponse = data[0].output;
+          do {
+            botResponse = botResponse
+              .replace("**", "<strong>")
+              .replace("**", "</strong>");
+          } while (botResponse.includes("**"));
+          do {
+            botResponse = botResponse.replace("*", "-");
+          } while (botResponse.includes("*"));
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { role: "model", parts: [{ text: botResponse }] },
+          ]);
+          setLoadingMessage(false);
 
-    const response = await chatSession.sendMessage(newMessage);
-    if (response) {
+        });
+    } catch (error) {
       setLoadingMessage(false);
-      let botResponse = response.response.text();
-      do {
-        botResponse = botResponse
-          .replace("**", "<strong>")
-          .replace("**", "</strong>");
-      } while (botResponse.includes("**"));
-
-      do {
-        botResponse = botResponse.replace("*", "-");
-      } while (botResponse.includes("*"));
-      // Agregar respuesta del modelo al estado
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { role: "model", parts: [{ text: botResponse }] },
-      ]);
+      console.error("Error al enviar el mensaje:", error);
+      return;
     }
   }
 

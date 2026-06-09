@@ -13,7 +13,7 @@
   },
   "about": {
     "title": "Sobre mi",
-    "description": "Actualment visc a Barcelona, Espanya. Tinc {age} anys. Estic estudiant el cicle formatiu de grau superior en Desenvolupament d'Aplicacions Multiplataforma a l'institut de La Salle Online.",
+    "description": "Actualment visc a Barcelona, Espanya. Tinc {age} anys. Estic estudiant Enginyeria Informàtica a la Universitat Oberta de Catalunya (UOC).",
     "description2": "Vaig començar a aprendre sobre desenvolupament web l’any 2019, en el grau mitjà de Sistemes Microinformàtics i Xarxes a l’assignatura de \"Aplicacions web\", on vaig aprendre a utilitzar diferents tecnologies i gestors de contingut com HTML, CSS, JavaScript, Wordpress i Moodle.",
     "description3": "Actualment estic millorant les meves habilitats en el desenvolupament web aprenent tecnologies de backend com PHP, MySQL, Laravel o Node. També estic aprenent tecnologies de frontend com React o Next.js. Per completar-me, tinc alguns coneixements sobre disseny UX/UI.",
     "description4": "Si vols més informació sobre mi, pots accedir al meu <guidelines>Linkedin</guidelines> o al meu <portfolio>portafoli personal</portfolio>.",
