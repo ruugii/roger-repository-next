@@ -18,7 +18,7 @@ export default function Studies() {
             description: t('degree.Engineering'),
           },
           {
-            date: `${t('year.2024')} - ${t('year.current')}`,
+            date: `${t('year.2024')} - ${t('year.2026')}`,
             title: t('school.lasalleonline'),
             description: t('degree.DAM'),
           },
