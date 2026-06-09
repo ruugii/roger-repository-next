@@ -139,6 +139,7 @@
     "title": "Experiencia",
     "year": {
       "current": "Actualidad",
+      "2026": "2026",
       "2025": "2025",
       "2024": "2024",
       "2023": "2023",
@@ -206,6 +207,11 @@
         "title": "LETI Pharma",
         "position": "Digitalización de datos",
         "description": "<ul><li>Digitalización de los datos de las recetas del departamento de vacunas a través de una plataforma interna.</li><li>Creación de nuevos pacientes mediante SAP.</li><li>Realización de llamadas para la verificación de datos.</li></ul>"
+      },
+      "femcet": {
+        "title": "FEMCET",
+        "position": "Administrativo y recepcionista",
+        "description": "Realizar tareas de recepción en las oficinas de distintos clientes, como Leti, Fundación la Caixa, Fundación Josep Carreras, Barcelona Activa, Barcelona Cicle de l’Aigua u Òmnium Cultural, junto con tareas de administración de datos para estas mismas empresas."
       }
     }
   },

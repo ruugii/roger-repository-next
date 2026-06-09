@@ -14,9 +14,9 @@ export default function Experience() {
       <Timeline
         items={[
           {
-            date: `${t('year.2025')} - ${t('year.current')}`,
-            title: t('enterprice.leti.title'),
-            description: t.rich('enterprice.leti.description', {
+            date: `${t('year.2025')} - ${t('year.2026')}`,
+            title: t('enterprice.femcet.title'),
+            description: t.rich('enterprice.femcet.description', {
               ul: (chunks) => (
                 <ul>
                   {chunks}
