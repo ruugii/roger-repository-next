@@ -17,57 +17,6 @@ type Study = {
   isActive: boolean;
 };
 
-const initialStudies: Study[] = [
-  {
-    id: 1,
-    school: "UOC - Universitat Oberta de Catalunya",
-    degreeEs: "Ingeniería Informática",
-    degreeCat: "Enginyeria Informàtica",
-    degreeEn: "Computer Engineering",
-    startYear: "2025",
-    endYear: "",
-    isCurrent: true,
-    sortOrder: 1,
-    isActive: true,
-  },
-  {
-    id: 2,
-    school: "La Salle Online",
-    degreeEs: "CFGS Desarrollo de Aplicaciones Multiplataforma",
-    degreeCat: "CFGS Desenvolupament d'Aplicacions Multiplataforma",
-    degreeEn: "CFGS Multiplatform Application Development",
-    startYear: "2024",
-    endYear: "2026",
-    isCurrent: false,
-    sortOrder: 2,
-    isActive: true,
-  },
-  {
-    id: 3,
-    school: "La Salle Gracia",
-    degreeEs: "CFGS Desarrollo de Aplicaciones Web",
-    degreeCat: "CFGS Desenvolupament d'Aplicacions Web",
-    degreeEn: "CFGS Web Application Development",
-    startYear: "2021",
-    endYear: "2024",
-    isCurrent: false,
-    sortOrder: 3,
-    isActive: true,
-  },
-  {
-    id: 4,
-    school: "IES Eugeni d'Ors",
-    degreeEs: "CFGM Sistemas Microinformáticos y Redes",
-    degreeCat: "CFGM Sistemes Microinformàtics i Xarxes",
-    degreeEn: "CFGM Microcomputer Systems and Networks",
-    startYear: "2018",
-    endYear: "2021",
-    isCurrent: false,
-    sortOrder: 4,
-    isActive: true,
-  },
-];
-
 const emptyStudy: Study = {
   id: 0,
   school: "",

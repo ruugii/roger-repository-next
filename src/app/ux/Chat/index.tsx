@@ -1,6 +1,5 @@
 "use client";
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import Image from "next/image";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
@@ -20,10 +19,6 @@ export default function Chat(props: {
   const { text, firstMsg, changeAudio, changeText, power } = props;
 
   const searchParams = useSearchParams();
-
-  const [apiKey] = useState<string>(
-    process.env.NEXT_PUBLIC_GEMINI_API_KEY ?? ""
-  );
   const [audioEnabled] = useState<boolean>(false);
   const [textEnabled] = useState<boolean>(true);
   const [mode, setMode] = useState<"text" | "audio">("text");
@@ -40,8 +35,6 @@ export default function Chat(props: {
   const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
   const [audioURL, setAudioURL] = useState<string>("");
   const [recording, setRecording] = useState<boolean>(false);
-
-  const genAI = new GoogleGenerativeAI(apiKey);
 
   const finish = () => {
     if (mediaRecorder) {
