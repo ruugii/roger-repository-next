@@ -125,50 +125,72 @@ export default function AdminStudiesPage() {
     setEditingId(study.id);
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = async (id: number) => {
     const confirmDelete = confirm("¿Seguro que quieres eliminar este estudio?");
 
     if (!confirmDelete) return;
 
-    setStudies((prev) => prev.filter((study) => study.id !== id));
+    try {
+      const response = await fetch(`/api/admin/studies/${id}`, {
+        method: "DELETE",
+      });
 
-    if (editingId === id) {
-      resetForm();
+      if (!response.ok) {
+        console.error("Error deleting study:", response.statusText);
+        alert("No se ha podido eliminar el estudio.");
+        return;
+      }
+
+      setStudies((prev) => prev.filter((study) => study.id !== id));
+
+      if (editingId === id) {
+        resetForm();
+      }
+    } catch (error) {
+      console.error("Error deleting study:", error);
+      alert("No se ha podido eliminar el estudio.");
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!selectedStudy.school.trim()) return;
     if (!selectedStudy.degreeEs.trim()) return;
     if (!selectedStudy.startYear.trim()) return;
 
-    if (editingId) {
-      setStudies((prev) =>
-        prev.map((study) =>
-          study.id === editingId
-            ? {
-                ...selectedStudy,
-                id: editingId,
-              }
-            : study,
-        ),
+    try {
+      const isEditing = editingId !== null;
+
+      const response = await fetch(
+        isEditing ? `/api/admin/studies/${editingId}` : "/api/admin/studies",
+        {
+          method: isEditing ? "PUT" : "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(selectedStudy),
+        },
       );
-    } else {
-      const newStudy: Study = {
-        ...selectedStudy,
-        id: Date.now(),
-        sortOrder:
-          selectedStudy.sortOrder === 0
-            ? studies.length + 1
-            : selectedStudy.sortOrder,
-      };
 
-      setStudies((prev) => [...prev, newStudy]);
+      if (!response.ok) {
+        console.error("Error saving study:", response.statusText);
+        alert("No se ha podido guardar el estudio.");
+        return;
+      }
+
+      const studiesResponse = await fetch("/api/admin/studies", {
+        cache: "no-store",
+      });
+
+      const data: Study[] = await studiesResponse.json();
+      setStudies(data);
+
+      resetForm();
+    } catch (error) {
+      console.error("Error saving study:", error);
+      alert("No se ha podido guardar el estudio.");
     }
-
-    resetForm();
   };
 
   return (
