@@ -212,6 +212,11 @@
         "title": "FEMCET",
         "position": "Administrativo y recepcionista",
         "description": "Realizar tareas de recepción en las oficinas de distintos clientes, como Leti, Fundación la Caixa, Fundación Josep Carreras, Barcelona Activa, Barcelona Cicle de l’Aigua u Òmnium Cultural, junto con tareas de administración de datos para estas mismas empresas."
+      },
+      "EYClick": {
+        "title": "EYClick Agencia Marketing Digital",
+        "position": "Desarrollo y diseño web",
+        "description": "Diseño y desarrollo de landing pages, plantillas y páginas web orientadas a la conversión para distintas campañas de marketing de sus clientes, utilizando WordPress."
       }
     }
   },

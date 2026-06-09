@@ -212,6 +212,11 @@
         "title": "FEMCET",
         "position": "Administrative and receptionist",
         "description": "Perform reception tasks in the offices of various clients, such as Leti, La Caixa Foundation, Josep Carreras Foundation, Barcelona Active, Barcelona Water Cycle and the Cultural Council, along with administrative data management tasks for these same companies."
+      },
+      "EYClick": {
+        "title": "EYClick Digital Marketing Agency",
+        "position": "Web development and design",
+        "description": "Design and development of landing pages, templates, and web pages oriented towards conversion for various marketing campaigns of their clients, using WordPress."
       }
     }
   },
