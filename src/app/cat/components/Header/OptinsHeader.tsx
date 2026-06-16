@@ -8,22 +8,22 @@ export default function OptionsHeader() {
   return (
     <ul className=" hidden lg:flex gap-4">
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#home">{t('home')}</Link>
+        <Link href="/#home">{t('home')}</Link>
       </li>
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#about">{t('about')}</Link>
+        <Link href="/#about">{t('about')}</Link>
       </li>
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#projects">{t('projects')}</Link>
+        <Link href="/#projects">{t('projects')}</Link>
       </li>
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#skills">{t('skills')}</Link>
+        <Link href="/#skills">{t('skills')}</Link>
       </li>
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#studies">{t('studies')}</Link>
+        <Link href="/#studies">{t('studies')}</Link>
       </li>
       <li className=" text-black hover:text-gray-800 hover:underline">
-        <Link href="#experience">{t('experience')}</Link>
+        <Link href="/#experience">{t('experience')}</Link>
       </li>
     </ul>
   )
