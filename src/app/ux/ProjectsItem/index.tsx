@@ -67,20 +67,23 @@ export default function ProjectsItem(props: ProjectInteface) {
         className="project-card__link"
         aria-label={name}
       >
-        <div>
+        <div className="project-card__title-layer">
           <h3 className="project-card__title font-bold">{name}</h3>
-          <p className="project-card__description">{description}</p>
         </div>
 
-        {technologies.length > 0 ? (
-          <div className="project-card__tags">
-            {technologies.map((technology) => (
-              <span key={technology.label} className="project-card__tag">
-                {technology.label}
-              </span>
-            ))}
-          </div>
-        ) : null}
+        <div className="project-card__details">
+          <p className="project-card__description">{description}</p>
+
+          {technologies.length > 0 ? (
+            <div className="project-card__tags">
+              {technologies.map((technology) => (
+                <span key={technology.label} className="project-card__tag">
+                  {technology.label}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </Link>
     </li>
   )

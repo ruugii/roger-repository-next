@@ -142,7 +142,6 @@ html {
 
 .portfolio-page section p {
   max-width: 68rem;
-  color: #374151;
   font-size: clamp(1rem, 2.2vw, 1.18rem);
   line-height: 1.8;
   overflow-wrap: anywhere;
@@ -202,13 +201,14 @@ html {
 }
 
 .project-card {
-  min-height: 15rem;
+  min-height: clamp(17rem, 28vw, 21rem);
   background-color: #78350f;
   background-position: center;
   background-size: cover;
 }
 
 .project-card__link {
+  position: relative;
   display: flex;
   min-height: inherit;
   height: 100%;
@@ -222,6 +222,55 @@ html {
   text-decoration: none;
 }
 
+.project-card__link:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: -3px;
+}
+
+.project-card__title-layer,
+.project-card__details {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.project-card__title-layer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card__details {
+  gap: 1rem;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgb(17 24 39 / 0.18), rgb(17 24 39 / 0.94));
+  opacity: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  pointer-events: none;
+  scrollbar-color: rgb(250 204 21 / 0.75) rgb(17 24 39 / 0.18);
+  scrollbar-width: thin;
+  transform: translateY(0.75rem);
+}
+
+.project-card:hover .project-card__title-layer,
+.project-card:focus-within .project-card__title-layer {
+  opacity: 0;
+  transform: translateY(-0.75rem);
+}
+
+.project-card:hover .project-card__details,
+.project-card:focus-within .project-card__details {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .project-card__title {
   color: #fff7ed;
   font-size: clamp(1.2rem, 2vw, 1.55rem);
@@ -229,13 +278,11 @@ html {
 }
 
 .project-card__description {
-  display: -webkit-box;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
   color: rgb(255 247 237 / 0.9);
   font-size: 0.95rem;
   line-height: 1.55;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
 }
 
 .project-card__tags {
