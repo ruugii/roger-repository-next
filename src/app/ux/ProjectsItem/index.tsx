@@ -1,7 +1,5 @@
-'use client'
 
 import Link from "next/link";
-import { useState } from "react";
 
 interface ProjectInteface {
   link: string;
@@ -24,8 +22,6 @@ interface ProjectInteface {
 
 export default function ProjectsItem(props: ProjectInteface) {
 
-  const [hover, setHover] = useState(false);
-
   const {
     link,
     name,
@@ -44,46 +40,48 @@ export default function ProjectsItem(props: ProjectInteface) {
     expo,
     bgImage
   } = props;
+  const technologies = [
+    { enabled: html, label: "HTML" },
+    { enabled: css, label: "CSS" },
+    { enabled: js, label: "JS" },
+    { enabled: ts, label: "TS" },
+    { enabled: json, label: "JSON" },
+    { enabled: react, label: "React" },
+    { enabled: nextJs, label: "Next.js" },
+    { enabled: tailwind, label: "Tailwind" },
+    { enabled: java, label: "Java" },
+    { enabled: javaFX, label: "JavaFX" },
+    { enabled: git, label: "Git" },
+    { enabled: expo, label: "Expo" },
+  ].filter((technology) => technology.enabled);
+  const backgroundStyle = bgImage
+    ? {
+      backgroundImage: `url(${bgImage})`,
+    }
+    : undefined;
+
   return (
-    <Link href={link}>
-      <li
-        className="bg-yellow-800 min-h-64 w-64 flex flex-col justify-center items-center mx-auto rounded-lg"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+    <li className="project-card" style={backgroundStyle}>
+      <Link
+        href={link || "#projects"}
+        className="project-card__link"
+        aria-label={name}
       >
-        <div className=" bg-white/40 px-4 py-2 h-full min-h-64 w-64 flex flex-col items-center mx-auto rounded-lg justify-center">
-          {hover ? (
-            <div className=" gap-2">
-              <p className="text-sm">
-                {description}
-              </p>
-              <div className=" w-full flex-row justify-between flex font-bold">
-                {html && <p>HTML</p>}
-                {css && <p>CSS</p>}
-                {js && <p>JS</p>}
-                {ts && <p>TS</p>}
-                {json && <p>JSON</p>}
-                {react && <p>React</p>}
-                {nextJs && <p>Next.js</p>}
-                {tailwind && <p>Tailwind</p>}
-                {java && <p>Java</p>}
-                {javaFX && <p>JavaFX</p>}
-                {git && <p>Git</p>}
-                {expo && <p>expo</p>}
-              </div>
-            </div>
-          ) : (
-            <h3 className="text-2xl font-bold">
-              {name}
-            </h3>
-          )}
+        <div>
+          <h3 className="project-card__title font-bold">{name}</h3>
+          <p className="project-card__description">{description}</p>
         </div>
-      </li>
-    </Link>
+
+        {technologies.length > 0 ? (
+          <div className="project-card__tags">
+            {technologies.map((technology) => (
+              <span key={technology.label} className="project-card__tag">
+                {technology.label}
+              </span>
+            ))}
+          </div>
+        ) : null}
+      </Link>
+    </li>
   )
 }

@@ -13,7 +13,7 @@ interface TimelineItem {
 
 export default function Timeline({ items }: TimelineProps) {
   return (
-    <ol className="relative border-s border-gray-700">
+    <ol className="timeline-list">
       {items.map((item, index) => (
         <TimelineItem
           key={index}

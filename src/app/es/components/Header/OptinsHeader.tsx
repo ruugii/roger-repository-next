@@ -6,23 +6,23 @@ export default function OptionsHeader() {
   const t = useTranslations('menu')
 
   return (
-    <ul className=" hidden lg:flex gap-4">
-      <li className=" text-black hover:text-gray-800 hover:underline">
+    <ul className="site-nav">
+      <li>
         <Link href="/#home">{t('home')}</Link>
       </li>
-      <li className=" text-black hover:text-gray-800 hover:underline">
+      <li>
         <Link href="/#about">{t('about')}</Link>
       </li>
-      <li className=" text-black hover:text-gray-800 hover:underline">
+      <li>
         <Link href="/#projects">{t('projects')}</Link>
       </li>
-      <li className=" text-black hover:text-gray-800 hover:underline">
+      <li>
         <Link href="/#skills">{t('skills')}</Link>
       </li>
-      <li className=" text-black hover:text-gray-800 hover:underline">
+      <li>
         <Link href="/#studies">{t('studies')}</Link>
       </li>
-      <li className=" text-black hover:text-gray-800 hover:underline">
+      <li>
         <Link href="/#experience">{t('experience')}</Link>
       </li>
     </ul>
