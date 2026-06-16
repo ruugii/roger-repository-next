@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/app/[locale]/components/Header";
+import Header from "@/app/es/components/Header";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 

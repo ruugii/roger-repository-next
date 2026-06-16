@@ -1,5 +1,6 @@
+
+import Header from "@/app/es/components/Header";
 import Link from "next/link";
-import Header from "../[locale]/components/Header";
 
 const adminSections = [
   {
