@@ -3,6 +3,13 @@ import Header from "../[locale]/components/Header";
 
 const adminSections = [
   {
+    title: "Inicio",
+    description:
+      "Modifica tu nombre, profesión, descripción, foto de perfil y enlaces a redes sociales.",
+    href: "/admin/home",
+    icon: "🏠",
+  },
+  {
     title: "Estudios",
     description:
       "Gestiona centros, grados, fechas de inicio y fin, estado actual y contenido por idioma.",
