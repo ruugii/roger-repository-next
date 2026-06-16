@@ -1,5 +1,6 @@
 
 import Header from "@/app/es/components/Header";
+import LogoutButton from "./components/LogoutButton";
 import Link from "next/link";
 
 const adminSections = [
@@ -48,20 +49,24 @@ export default function AdminPage() {
       <div className="min-h-screen min-w-full max-w-full grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-yellow-500">
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full max-w-6xl">
           <section className="flex flex-col gap-6 bg-white rounded-lg p-8 text-black w-full">
-            <div className="flex flex-col gap-2">
-              <p className="text-sm font-bold uppercase tracking-widest text-yellow-800">
-                Panel de administración
-              </p>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-2">
+                <p className="text-sm font-bold uppercase tracking-widest text-yellow-800">
+                  Panel de administración
+                </p>
 
-              <h1 className="text-4xl font-bold">
-                ¿Qué quieres modificar?
-              </h1>
+                <h1 className="text-4xl font-bold">
+                  ¿Qué quieres modificar?
+                </h1>
 
-              <p className="text-lg text-gray-700 max-w-3xl">
-                Selecciona una sección para actualizar la información que se
-                mostrará en tu portfolio y que después podrá consultar el
-                chatbot.
-              </p>
+                <p className="text-lg text-gray-700 max-w-3xl">
+                  Selecciona una sección para actualizar la información que se
+                  mostrará en tu portfolio y que después podrá consultar el
+                  chatbot.
+                </p>
+              </div>
+
+              <LogoutButton />
             </div>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
