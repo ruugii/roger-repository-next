@@ -80,7 +80,6 @@ html {
 .site-language-nav a:hover {
   background: #78350f;
   color: #fff7ed;
-  transform: translateY(-1px);
 }
 
 .portfolio-page {
