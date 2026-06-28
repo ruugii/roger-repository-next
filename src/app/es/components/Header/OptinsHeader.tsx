@@ -8,22 +8,22 @@ export default function OptionsHeader() {
   return (
     <ul className="site-nav">
       <li>
-        <Link href="/#home">{t('home')}</Link>
+        <Link href="/es#home">{t('home')}</Link>
       </li>
       <li>
-        <Link href="/#about">{t('about')}</Link>
+        <Link href="/es#about">{t('about')}</Link>
       </li>
       <li>
-        <Link href="/#projects">{t('projects')}</Link>
+        <Link href="/es#projects">{t('projects')}</Link>
       </li>
       <li>
-        <Link href="/#skills">{t('skills')}</Link>
+        <Link href="/es#skills">{t('skills')}</Link>
       </li>
       <li>
-        <Link href="/#studies">{t('studies')}</Link>
+        <Link href="/es#studies">{t('studies')}</Link>
       </li>
       <li>
-        <Link href="/#experience">{t('experience')}</Link>
+        <Link href="/es#experience">{t('experience')}</Link>
       </li>
     </ul>
   )
