@@ -167,10 +167,6 @@ export default function Chat(props: {
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const { replace } = useRouter();
-  useEffect(() => {
-    params.set("open", `${openChat}`);
-    replace(`${pathname}?${params.toString()}`);
-  }, [openChat]);
 
   return (
     <div className="fixed bottom-0 right-0 mb-5 mr-5 hidden md:block">
