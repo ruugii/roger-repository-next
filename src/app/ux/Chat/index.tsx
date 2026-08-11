@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
 type Message = {
@@ -163,10 +163,6 @@ export default function Chat(props: {
     if (message.trim() === "") return;
     run(message);
   };
-
-  const params = new URLSearchParams(searchParams);
-  const pathname = usePathname();
-  const { replace } = useRouter();
 
   return (
     <div className="fixed bottom-0 right-0 mb-5 mr-5 hidden md:block">
